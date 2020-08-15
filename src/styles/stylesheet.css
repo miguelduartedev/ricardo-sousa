@@ -1,0 +1,28 @@
+body{
+  font-family: Neue Haas Grotesk Text Pro;
+}
+
+#author {
+  z-index: 999;
+
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 120px;
+  line-height: 147px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #000000;
+}
+
+.sigh {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+img {
+  max-width: 980px;
+}
