@@ -1,5 +1,6 @@
 body{
   font-family: Neue Haas Grotesk Text Pro;
+  overflow: hidden;
 }
 
 #author {
@@ -13,9 +14,39 @@ body{
   text-align: center;
   letter-spacing: -0.03em;
   color: #000000;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 49px;
+  letter-spacing: -0.03em;
+  color: #000000;
 }
 
-.sigh {
+#top_menu {
+  text-align: center; 
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+  color: #000000;
+}
+
+#side_author {
+  position: fixed; 
+  top: 15px;
+  opacity: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+  color: #000000;
+}
+
+.happy {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
 
@@ -26,3 +57,28 @@ body{
 img {
   max-width: 980px;
 }
+
+#description{
+  margin-top: 60px;
+  text-align: center;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height, or 123% */
+
+  text-align: center;
+  letter-spacing: -0.03em;
+
+  color: #000000;
+}
+
+@media (max-height: 740px) {
+  #photography {
+    height: 500px;
+  }
+  #description {
+    margin-top: 30px;
+  }
+ }
