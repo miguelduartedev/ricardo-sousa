@@ -13,21 +13,21 @@ function navigation(direction) {
   if (direction === "previous") {
     if(parseInt(current_img) > 1) {
       current_img--;
-      img.src='images/' + current_img + '-min.png';
+      img.src='images/' + current_img + '-min.jpg';
       img.setAttribute("data-img", current_img);
     }else {
       current_img = 5;
-      img.src='images/' + current_img + '-min.png';
+      img.src='images/' + current_img + '-min.jpg';
       img.setAttribute("data-img", current_img);
     }
   }else if (direction === "next") {
     if(parseInt(current_img) !== 5) {
       current_img++;
-      img.src='images/' + current_img + '-min.png';
+      img.src='images/' + current_img + '-min.jpg';
       img.setAttribute("data-img", current_img);
     }else {
       current_img = 1;
-      img.src='images/' + current_img + '-min.png';
+      img.src='images/' + current_img + '-min.jpg';
       img.setAttribute("data-img", current_img);
     }
   }
