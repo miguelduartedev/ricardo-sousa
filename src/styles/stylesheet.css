@@ -84,3 +84,9 @@ letter-spacing: -0.03em;
 
 color: #000000;
 }
+
+@media (max-width: 1366px) { 
+  #photography {
+    max-height: 70%;
+  }
+}
