@@ -1,6 +1,5 @@
 body{
   font-family: Neue Haas Grotesk Text Pro;
-  overflow: hidden;
 }
 
 #author {
@@ -19,31 +18,16 @@ body{
   font-weight: normal;
   font-size: 40px;
   line-height: 49px;
-  letter-spacing: -0.03em;
-  color: #000000;
-}
+  /* identical to box height */
 
-#top_menu {
-  text-align: center; 
-  margin-bottom: 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 16px;
+  text-align: center;
   letter-spacing: -0.03em;
+
   color: #000000;
 }
 
 #side_author {
-  position: fixed; 
-  top: 15px;
   opacity: 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 16px;
-  letter-spacing: -0.03em;
-  color: #000000;
 }
 
 .happy {
@@ -59,7 +43,6 @@ img {
 }
 
 #description{
-  margin-top: 60px;
   text-align: center;
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
@@ -74,11 +57,30 @@ img {
   color: #000000;
 }
 
-@media (max-height: 740px) {
-  #photography {
-    height: 500px;
-  }
-  #description {
-    margin-top: 30px;
-  }
- }
+#read {
+font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+letter-spacing: -0.03em;
+text-decoration-line: underline;
+
+color: #000000;
+}
+
+#counter {
+font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+text-align: right;
+letter-spacing: -0.03em;
+
+color: #000000;
+}
