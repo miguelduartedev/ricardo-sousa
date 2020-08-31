@@ -98,5 +98,5 @@ function navigation(direction) {
 
 function project_handler(current_img) {
   return images[current_img]['project'] ?
-    (counter.innerHTML = images[current_img]['proj_position'], counter.style.visibility = 'visible', read.style.visibility = 'visible') : null;
+    (counter.innerHTML = images[current_img]['proj_position'], counter.style.visibility = 'visible', read.style.visibility = 'visible') : (counter.style.visibility = 'hidden', read.style.visibility = 'hidden');
 }
