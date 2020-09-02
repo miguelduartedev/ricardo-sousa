@@ -129,4 +129,18 @@ color: #000000;
     margin-top: 25px;
     transition-duration: 0.2s;
   }
+
+  #author {
+    font-family: Neue Haas Grotesk Text Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 43px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    color: #000000;
+  }
  }
