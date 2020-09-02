@@ -1,0 +1,132 @@
+body{
+  font-family: Neue Haas Grotesk Text Pro;
+}
+
+#author {
+  z-index: 999;
+
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 120px;
+  line-height: 147px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #000000;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 49px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: -0.03em;
+
+  color: #000000;
+}
+
+#side_author {
+  opacity: 0;
+}
+
+.happy {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+img {
+  max-width: 980px;
+}
+
+#description{
+  text-align: center;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height, or 123% */
+
+  text-align: center;
+  letter-spacing: -0.03em;
+
+  color: #000000;
+}
+
+#read {
+font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+letter-spacing: -0.03em;
+text-decoration-line: underline;
+
+color: #000000;
+}
+
+#side_author {
+  z-index: 40;
+  position: fixed; 
+  top: 25px;
+}
+
+#menu {
+  margin-top: 25px;
+  text-align: center; 
+  margin-bottom: 0;
+}
+
+#counter {
+font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 16px;
+/* identical to box height, or 123% */
+
+text-align: right;
+letter-spacing: -0.03em;
+
+color: #000000;
+}
+
+#mobile_nav {
+  display: none;
+}
+
+@media (max-width: 1366px) { 
+  #image {
+    max-height: 70%;
+  }
+}
+
+@media (max-width: 575.98px) { 
+  #photography {
+    max-width: 325px;
+  }
+  #side_author {
+    text-align: center;
+    width: 100%;
+    right: 0;
+  }
+  #menu {
+    display: none;
+  }
+  #mobile_nav {
+    position: relative;
+    z-index: 9999;
+    width: 25px;
+    display: block;
+    float: right;
+    margin-right: 10px;
+    margin-top: 25px;
+    transition-duration: 0.2s;
+  }
+ }
