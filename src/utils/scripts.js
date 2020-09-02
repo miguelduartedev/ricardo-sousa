@@ -100,3 +100,9 @@ function project_handler(current_img) {
   return images[current_img]['project'] ?
     (counter.innerHTML = images[current_img]['proj_position'], counter.style.visibility = 'visible', read.style.visibility = 'visible') : (counter.style.visibility = 'hidden', read.style.visibility = 'hidden');
 }
+
+function mobile_nav() {
+  let nav = document.getElementById("mobile_nav");
+  nav.style.transform = "rotate(45deg)";
+  console.log("wtf");
+}

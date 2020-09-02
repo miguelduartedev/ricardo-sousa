@@ -30,11 +30,12 @@
 </div>
 
   <div id="main_section" style="opacity: 0.3;z-index: -1;position: absolute;top: 0;left: 0;right: 0;bottom: 0;">
-    <div class="container w-100" style="max-width: 100%;position:fixed;">
+    <div class="container w-100" style="max-width: 100%;position:fixed;z-index: 500;">
       <div class="row" >
-        <div class="col-sm-12" style="margin-top: 15px;">
-          <p style="text-align: center; margin-bottom: 0;">OVERVIEW INFO</p>
-          <p id="side_author" style="position: fixed; top: 15px;">RICARDO SOUSA</p>
+        <div class="col-sm-12">
+          <img id="mobile_nav" onclick="mobile_nav('open')" src="images/nav_icon.svg"/>
+          <p id="menu">OVERVIEW INFO</p>
+          <p id="side_author">RICARDO SOUSA</p>
         </div>
       </div>
     </div>
@@ -73,6 +74,7 @@
           width: 100%;
           position: fixed;
           bottom: 20px;
+          right:0;
       ">Untitled, 2018</p>
           <p id="read" style="float:left; visibility:hidden;">Read</p>
           <p id="counter" style="float:right; visibility:hidden;">1/X</p>

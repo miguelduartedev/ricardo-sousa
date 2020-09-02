@@ -71,6 +71,18 @@ text-decoration-line: underline;
 color: #000000;
 }
 
+#side_author {
+  z-index: 40;
+  position: fixed; 
+  top: 25px;
+}
+
+#menu {
+  margin-top: 25px;
+  text-align: center; 
+  margin-bottom: 0;
+}
+
 #counter {
 font-family: Neue Haas Grotesk Text Pro;
 font-style: normal;
@@ -85,8 +97,36 @@ letter-spacing: -0.03em;
 color: #000000;
 }
 
+#mobile_nav {
+  display: none;
+}
+
 @media (max-width: 1366px) { 
-  #photography {
+  #image {
     max-height: 70%;
   }
 }
+
+@media (max-width: 575.98px) { 
+  #photography {
+    max-width: 325px;
+  }
+  #side_author {
+    text-align: center;
+    width: 100%;
+    right: 0;
+  }
+  #menu {
+    display: none;
+  }
+  #mobile_nav {
+    position: relative;
+    z-index: 9999;
+    width: 25px;
+    display: block;
+    float: right;
+    margin-right: 10px;
+    margin-top: 25px;
+    transition-duration: 0.2s;
+  }
+ }
