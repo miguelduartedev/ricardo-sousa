@@ -74,11 +74,11 @@ color: #000000;
 #side_author {
   z-index: 40;
   position: fixed; 
-  top: 25px;
+  top: 15px;
 }
 
 #menu {
-  margin-top: 25px;
+  margin-top: 15px;
   text-align: center; 
   margin-bottom: 0;
 }
@@ -115,9 +115,11 @@ color: #000000;
     text-align: center;
     width: 100%;
     right: 0;
+    top: 25px;
   }
   #menu {
     display: none;
+    margin-top: 25px;
   }
   #mobile_nav {
     position: relative;
