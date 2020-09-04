@@ -23,14 +23,13 @@
   <div class="container" style="align-self: center;">
     <div class="row">
       <div class="col-sm" id="landing_div">
-        <p id="author">RICARDO SOUSA</p>
       </div>
     </div>
   </div>
 </div>
 
-  <div id="main_section" style="opacity: 0.3;z-index: -1;position: absolute;top: 0;left: 0;right: 0;bottom: 0;">
-    <div class="container w-100" style="max-width: 100%;position:fixed;z-index: 500;">
+  <div id="main_section" style="z-index: -1;position: absolute;top: 0;left: 0;right: 0;bottom: 0;">
+    <div class="container w-100" id="top_menu" style="opacity: 0.3;max-width: 100%;position:fixed;z-index: 500;">
       <div class="row" >
         <div class="col-sm-12">
           <img id="mobile_nav" onclick="mobile_nav('open')" src="images/nav_icon.svg"/>
@@ -53,12 +52,10 @@
         padding: 0;
         z-index: -1;
     ">
-          
-          <img id="photography" data-img="1"
-            src="images/1.jpg" style="
-            align-self: center;
-            margin: 0 auto;
-        "/>
+          <div id="main_bloc">
+            <img id="photography" data-img="1" src="images/1.jpg" style="opacity: 0.3;align-self: center;margin: 0 auto;"/>
+            <p id="author">RICARDO SOUSA</p>
+          </div>
         </div>
         <div id="nav_next" onclick="navigation('next')" style="padding: 0;width: 50%;height: 100%;position: fixed;right: 0;">
           
@@ -66,7 +63,7 @@
       </div>
     </div>
 
-    <div class="container w-100" style="max-width: 100%;position: fixed;bottom: 20px;">
+    <div class="container w-100" id="footer" style="opacity: 0.3;max-width: 100%;position: fixed;bottom: 20px;">
       <div class="row" >
         <div class="col-sm-12" style="margin-top: 15px;">
           <p id="description" style="

@@ -1,9 +1,11 @@
 $(document).ready(function () {
   $(".happy").click(function () {
     $(".happy").fadeOut();
+    $("#author").fadeOut();
+    $("#top_menu").animate({ opacity: 1 });
+    $("#photography").animate({ opacity: 1 });
+    $("#footer").animate({ opacity: 1 });
     $("#side_author").animate({ opacity: 1 });
-    $("#main_section").animate({ opacity: 1 });
-
   });
 });
 
