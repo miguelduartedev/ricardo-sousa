@@ -3,30 +3,6 @@ body{
 }
 
 #author {
-  z-index: 999;
-
-  font-family: Neue Haas Grotesk Text Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 120px;
-  line-height: 147px;
-  text-align: center;
-  letter-spacing: -0.03em;
-  color: #000000;
-  font-family: Neue Haas Grotesk Text Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 40px;
-  line-height: 49px;
-  /* identical to box height */
-
-  text-align: center;
-  letter-spacing: -0.03em;
-
-  color: #000000;
-}
-
-#author2 {
   opacity: 1;
   position: absolute;
   top: 50%;
