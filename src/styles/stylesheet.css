@@ -3,6 +3,7 @@ body{
 }
 
 #author {
+  width: 100%;
   opacity: 1;
   position: absolute;
   top: 50%;
