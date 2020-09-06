@@ -32,8 +32,11 @@
     <div class="container w-100" id="top_menu" style="opacity: 0.3;max-width: 100%;position:fixed;z-index: 500;">
       <div class="row" >
         <div class="col-sm-12">
-          <img id="mobile_nav" onclick="mobile_nav('open')" src="images/nav_icon.svg"/>
-          <p id="menu"><a onclick="setPhotoState()" href="overview.html">OVERVIEW</a> <a href="google.pt">INFO</a>
+          <div onclick="mobile_nav('open')">
+          <img id="mobile_nav" data-state="open" src="images/nav_icon.svg" style="transform-style: flat;"/>
+        </div>
+
+          <p id="menu"><a id="menu_option" onclick="setPhotoState()" href="overview.html">OVERVIEW</a> <a href="info.html">INFO</a></p>
           <p id="side_author">RICARDO SOUSA</p>
         </div>
       </div>

@@ -96,7 +96,7 @@ color: #000000;
   top: 15px;
 }
 
-#menu {
+#menu, #back {
   margin-top: 15px;
   text-align: center; 
   margin-bottom: 0;
@@ -139,6 +139,9 @@ color: #000000;
   }
   #menu {
     display: none;
+    margin-top: 25px;
+  }
+  #back {
     margin-top: 25px;
   }
   #mobile_nav {
@@ -190,8 +193,8 @@ img.overview {
 
 @media (max-width: 767.98px) { 
   img.overview {
-    max-height: 180px;
     max-width: 285px;
+    max-height: 400px;
   }
 }
 
@@ -237,4 +240,17 @@ section {
 
 ::scrollbar {
   display: none;
+}
+
+.info {
+  font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 40px;
+line-height: 43px;
+/* or 107% */
+
+letter-spacing: -0.03em;
+
+color: #000000;
 }

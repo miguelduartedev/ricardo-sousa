@@ -119,8 +119,25 @@ function project_handler(current_img) {
 
 function mobile_nav() {
   let nav = document.getElementById("mobile_nav");
-  nav.style.transform = "rotate(45deg)";
-  console.log("wtf");
+  let mobile_menu = document.getElementById('menu');
+  let author = document.getElementById('side_author');
+  let menu_option = document.getElementById('menu_option');
+  if(nav.getAttribute('data-state') === 'open') {
+    nav.style.transform = "rotate(45deg)";
+    author.style.display = "none";
+    mobile_menu.style.position = "fixed";
+    menu_option.style.display = "block";
+    mobile_menu.style.display = "block";
+    mobile_menu.style.textAlign = "center";
+    mobile_menu.style.width = "100%";
+    mobile_menu.style.right = "0";
+    nav.setAttribute('data-state', 'close');
+  }else {
+    nav.style.transform = "unset";
+    mobile_menu.style.display = "none";
+    author.style.display = "block";
+    nav.setAttribute('data-state', 'open');
+  }
 }
 
 function setPhotoState() {
