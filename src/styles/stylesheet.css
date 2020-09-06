@@ -129,6 +129,7 @@ color: #000000;
 @media (max-width: 575.98px) { 
   #photography {
     max-width: 325px;
+    height: unset;
   }
   #side_author {
     text-align: center;
