@@ -1,12 +1,26 @@
 $(document).ready(function () {
-  $(".happy").click(function () {
-    $(".happy").fadeOut();
-    $("#author").fadeOut();
+  if (sessionStorage.getItem("photo")) {
+    img = sessionStorage.getItem("photo");
+    $(".happy").hide();
+    $("#author").hide();
     $("#top_menu").animate({ opacity: 1 });
+    $("#photography").attr('src', images[img]['url']);
+    $("#description").html(images[img]['description']);
+    project_handler(img);
+    $("#photography").attr("data-img", img);
     $("#photography").animate({ opacity: 1 });
     $("#footer").animate({ opacity: 1 });
     $("#side_author").animate({ opacity: 1 });
-  });
+  }else {
+    $(".happy").click(function () {
+      $(".happy").fadeOut();
+      $("#author").fadeOut();
+      $("#top_menu").animate({ opacity: 1 });
+      $("#photography").animate({ opacity: 1 });
+      $("#footer").animate({ opacity: 1 });
+      $("#side_author").animate({ opacity: 1 });
+    });
+  }
 });
 
 document.onkeydown = function (event) {
@@ -107,4 +121,11 @@ function mobile_nav() {
   let nav = document.getElementById("mobile_nav");
   nav.style.transform = "rotate(45deg)";
   console.log("wtf");
+}
+
+function setPhotoState() {
+  let img = document.getElementById("photography");
+  $('#photography').fadeOut();
+  let attribute = img.getAttribute('data-img');
+  sessionStorage.setItem('photo', attribute);
 }

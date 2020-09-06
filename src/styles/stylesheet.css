@@ -2,6 +2,15 @@ body{
   font-family: Neue Haas Grotesk Text Pro;
 }
 
+a {
+  color: unset;
+}
+
+a:hover {
+  color: unset;
+  text-decoration: none;
+}
+
 #author {
   width: 100%;
   opacity: 1;
@@ -44,8 +53,12 @@ body{
   align-items: center;
 }
 
-img {
+#photography {
   max-width: 980px;
+  opacity: 0.3;
+  align-self: center;
+  margin: 0 auto;
+  height: 580px;
 }
 
 #description{
@@ -152,3 +165,71 @@ color: #000000;
     color: #000000;
   }
  }
+
+img.overview {
+  max-width: 450px;
+}
+
+.overview.height-280 {
+  height: 280px;
+}
+
+.overview.height-350 {
+  height: 350px;
+}
+
+.overview.height-400 {
+  height: 400px;
+}
+
+#row {
+  margin: 150px 0 150px 0;
+  max-width: 100%;
+}
+
+
+
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+ html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px; 
+  background: transparent;  
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+} 
+
+html,
+body#overview {
+  height: 100%;
+  overflow: hidden;
+}
+
+.Loop {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+section {
+  position: relative;
+  text-align: center;
+}
+
+::scrollbar {
+  display: none;
+}
