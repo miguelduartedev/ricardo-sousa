@@ -137,50 +137,6 @@ color: #000000;
   }
 }
 
-@media (max-width: 575.98px) { 
-  #photography {
-    max-width: 325px;
-    height: unset;
-  }
-  #side_author {
-    text-align: center;
-    width: 100%;
-    right: 0;
-    top: 25px;
-  }
-  #menu {
-    display: none;
-    margin-top: 25px;
-  }
-  #back {
-    margin-top: 25px;
-  }
-  #mobile_nav {
-    position: relative;
-    z-index: 9999;
-    width: 25px;
-    display: block;
-    float: right;
-    margin-right: 10px;
-    margin-top: 25px;
-    transition-duration: 0.2s;
-  }
-
-  #author {
-    font-family: Neue Haas Grotesk Text Pro;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 35px;
-    line-height: 43px;
-    /* identical to box height */
-
-    text-align: center;
-    letter-spacing: -0.03em;
-
-    color: #000000;
-  }
- }
-
 img.overview {
   max-width: 450px;
 }
@@ -343,6 +299,7 @@ html, body#info {
 #info .left {
   float:left;
   position: absolute;
+  text-decoration-line: none;
 }
 #info .center{
   margin:0 auto;
@@ -352,3 +309,88 @@ html, body#info {
 #info_footer {
   margin-bottom: 20px;
 }
+
+@media (max-width: 575.98px) { 
+  #photography {
+    max-width: 325px;
+    height: unset;
+  }
+  #side_author {
+    text-align: center;
+    width: 100%;
+    right: 0;
+    top: 25px;
+  }
+  #menu {
+    display: none;
+    margin-top: 25px;
+  }
+  #back {
+    margin-top: 25px;
+  }
+  #mobile_nav {
+    position: relative;
+    z-index: 9999;
+    width: 25px;
+    display: block;
+    float: right;
+    margin-right: 10px;
+    margin-top: 25px;
+    transition-duration: 0.2s;
+  }
+
+  #author {
+    font-family: Neue Haas Grotesk Text Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 43px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    color: #000000;
+  }
+
+  .tg .tg-0lax .info_date {
+    margin-right: 10px;
+  }
+
+  #info .ricardo_info {
+    font-size: 25px;
+    margin: 25px 25px 0px 25px;
+  }
+
+   
+
+  .tg .tg-0lax .info_resume_top {
+    font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 28px;
+letter-spacing: -0.03em;
+color: #000000;
+  }
+  
+  .tg .tg-0lax .info_resume_bottom {
+    font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 28px;
+letter-spacing: -0.03em;
+color: #000000;
+  }
+
+  #info .center {
+    text-align: unset;
+    margin: unset;
+  }
+
+  #info .left {
+    float: unset;
+    position: unset;
+  }
+ }
