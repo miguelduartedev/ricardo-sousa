@@ -73,11 +73,11 @@ a:hover {
 }
 
 #description{
-
+margin-bottom: 20px;
   display: inline-block;
           width: 100%;
           position: fixed;
-          bottom: 20px;
+          bottom: 0px;
           right:0;
           z-index: -1;
 
@@ -96,6 +96,7 @@ a:hover {
 }
 
 #read {
+  margin-bottom: 20px;
 font-family: Neue Haas Grotesk Text Pro;
 font-style: normal;
 font-weight: normal;
@@ -122,6 +123,7 @@ color: #000000;
 }
 
 #counter {
+  margin-bottom: 20px;
 font-family: Neue Haas Grotesk Text Pro;
 font-style: normal;
 font-weight: normal;
