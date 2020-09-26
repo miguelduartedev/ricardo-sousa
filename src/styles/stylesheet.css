@@ -73,6 +73,14 @@ a:hover {
 }
 
 #description{
+
+  display: inline-block;
+          width: 100%;
+          position: fixed;
+          bottom: 20px;
+          right:0;
+          z-index: -1;
+
   text-align: center;
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
@@ -310,7 +318,56 @@ html, body#info {
   margin-bottom: 20px;
 }
 
-@media (max-width: 575.98px) { 
+ #readme #readme_description {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  /* or 123% */
+  
+  letter-spacing: -0.03em;
+  
+  color: #000000;
+ }
+
+ #readme #readme_title {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  /* or 123% */
+  
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  
+  color: #000000;
+ }
+
+ #readme #readlink {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height, or 123% */
+  
+  letter-spacing: -0.03em;
+  text-decoration-line: underline;
+  
+  color: #000000;
+ }
+
+ #readme #footer {
+  max-width: 100%;position: fixed;bottom: 20px;left:0px;
+ }
+
+ #readme #readlink {
+  float:left;
+ }
+
+ @media (max-width: 575.98px) { 
   #photography {
     max-width: 325px;
     height: unset;
@@ -392,5 +449,56 @@ color: #000000;
   #info .left {
     float: unset;
     position: unset;
+  }
+
+  #readme #footer {
+    max-width: unset;
+    position: unset;
+    bottom: unset;
+    left: unset;
+    text-align: center;
+  }
+
+  #readme #readlink {
+    float: unset;
+    font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 17px;
+/* identical to box height, or 106% */
+
+text-align: center;
+letter-spacing: -0.03em;
+text-decoration-line: underline;
+
+color: #000000;
+  }
+
+  #readme #readme_description {
+    font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* or 119% */
+
+letter-spacing: -0.03em;
+
+color: #000000;
+  }
+
+  #readme #readme_title {
+    font-family: Neue Haas Grotesk Text Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+/* or 119% */
+
+letter-spacing: -0.03em;
+text-transform: uppercase;
+
+color: #000000;
   }
  }
