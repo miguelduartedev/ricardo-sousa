@@ -113,8 +113,11 @@ function navigation(direction) {
 }
 
 function project_handler(current_img) {
-  return images[current_img]['project'] ?
+  try {
+    return images[current_img]['project'] ?
     (counter.innerHTML = images[current_img]['proj_position'], counter.style.visibility = 'visible', read.style.visibility = 'visible') : (counter.style.visibility = 'hidden', read.style.visibility = 'hidden');
+  } catch {
+  }
 }
 
 function mobile_nav() {
@@ -141,8 +144,21 @@ function mobile_nav() {
 }
 
 function setPhotoState() {
+  $("body").fadeOut(1000);
   let img = document.getElementById("photography");
   $('#photography').fadeOut();
   let attribute = img.getAttribute('data-img');
   sessionStorage.setItem('photo', attribute);
+}
+
+function fadeOutBody() {
+  $(document).ready(() => {
+    $("body").fadeIn(1000);
+  })
+}
+
+if ( document.URL.includes("info.html") ) {
+  $(document).ready(() => {
+    $("body").fadeIn(1000);
+  })
 }

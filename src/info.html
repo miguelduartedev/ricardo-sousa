@@ -9,7 +9,7 @@
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src=""></script>
+  <script src="utils/scripts.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-text-pro" rel="stylesheet">
@@ -17,13 +17,13 @@
 
 </head>
 
-<body id="info">
+<body id="info" style="display: none;">
 
   <div id="">
     <div class="container w-100" id="top_menu">
       <div class="row">
         <div class="col-sm-12">
-          <p id="back"><a style="text-decoration: none;color:black;" href="index.html">BACK</a> </p>
+          <p id="back"><a onclick="fadeOutBody()" style="text-decoration: none;color:black;" href="index.html">BACK</a> </p>
         </div>
       </div>
     </div>

@@ -361,7 +361,7 @@ html, body#info {
  }
 
  #readme #footer {
-  max-width: 100%;position: fixed;bottom: 20px;left:0px;
+  max-width: 100%;position: fixed;bottom: 0px;left:0px;
  }
 
  #readme #readlink {
