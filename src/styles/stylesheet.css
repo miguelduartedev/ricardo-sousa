@@ -72,7 +72,7 @@ a:hover {
   height: 580px;
 }
 
-#description{
+#description, #info_description{
 margin-bottom: 20px;
           width: 100%;
           position: fixed;
