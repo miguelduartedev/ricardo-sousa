@@ -2,12 +2,12 @@ console.log('Developed by Luís Conceição: https://www.linkedin.com/in/lu%C3%A
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  $("body").fadeIn(1000);
-
   if (sessionStorage.getItem("photo")) {
     img = sessionStorage.getItem("photo");
     document.getElementById(img).scrollIntoView();
+    $("body").animate({ opacity: 1 },'1000');
   } else {
+    $("body").animate({ opacity: 1 },'1000');
   }
 
   var doc = window.document,
