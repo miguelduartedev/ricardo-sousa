@@ -149,7 +149,6 @@ function mobile_nav() {
 }
 
 function setPhotoState() {
-  $("body").fadeOut(1000);
   let img = document.getElementById("photography");
   $('#photography').fadeOut();
   let attribute = img.getAttribute('data-img');
@@ -158,12 +157,11 @@ function setPhotoState() {
 
 function fadeOutBody() {
   $(document).ready(() => {
-    $("body").fadeIn(1000);
+    $("body").fadeOut(1000);
   })
 }
 
-if ( document.URL.includes("info.html") ) {
-  $(document).ready(() => {
-    $("body").fadeIn(1000);
-  })
-}
+
+$(document).ready(() => {
+  $("body").fadeIn(1000);
+})
