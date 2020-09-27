@@ -1,3 +1,5 @@
+console.log('Developed by Luís Conceição: https://www.linkedin.com/in/lu%C3%ADs-c-619364108/')
+
 $(document).ready(function () {
   if (sessionStorage.getItem("photo")) {
     img = sessionStorage.getItem("photo");
@@ -12,6 +14,9 @@ $(document).ready(function () {
     $("#footer").animate({ opacity: 1 });
     $("#side_author").animate({ opacity: 1 });
   }else {
+    $("#photography").attr('src', images[1]['url']);
+    $("#photography").attr("data-img", 1);
+    $("#description").html(images[1]['description']);
     $(".happy").click(function () {
       $(".happy").fadeOut();
       $("#author").fadeOut();
