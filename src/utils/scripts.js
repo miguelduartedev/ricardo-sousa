@@ -1,6 +1,7 @@
 console.log('Developed by Luís Conceição: https://www.linkedin.com/in/lu%C3%ADs-c-619364108/')
 
 $(document).ready(function () {
+  $("body").fadeIn(1000);
   if (sessionStorage.getItem("photo")) {
     img = sessionStorage.getItem("photo");
     $(".happy").hide();
@@ -56,19 +57,19 @@ var images = {
   '10': { 'url': "images/10.jpg", 'description': 'Untitled, Like angel, 2020', 'project': false },
   '11': { 'url': "images/11.jpg", 'description': 'Untitled, Like angel, 2020', 'project': false },
   '12': { 'url': "images/12.jpg", 'description': 'Untitled, Like angel, 2020', 'project': false },
-  '13': { 'url': "images/13.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_position': '1/7' },
-  '14': { 'url': "images/14.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_position': '2/7' },
-  '15': { 'url': "images/15.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_position': '3/7' },
-  '16': { 'url': "images/16.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_position': '4/7' },
-  '17': { 'url': "images/17.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_position': '5/7' },
-  '18': { 'url': "images/18.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_position': '6/7' },
-  '19': { 'url': "images/19.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_position': '7/7' },
-  '20': { 'url': "images/20.jpg", 'description': 'Silent gestures, 2018', 'project': true, 'proj_position': '1/4' },
-  '21': { 'url': "images/21.jpg", 'description': 'Silent gestures, 2018', 'project': true, 'proj_position': '2/4' },
-  '22': { 'url': "images/22.jpg", 'description': 'Silent gestures, 2018', 'project': true, 'proj_position': '3/4' },
-  '23': { 'url': "images/23.jpg", 'description': 'Silent gestures, 2018', 'project': true, 'proj_position': '4/4' },
-  '24': { 'url': "images/24.jpg", 'description': 'Essential oil burner, Silent gestures, 2018', 'project': true, 'proj_position': '1/2' },
-  '25': { 'url': "images/25.jpg", 'description': 'Essential oil diffuser, Silent gestures, 2018', 'project': true, 'proj_position': '2/2' },
+  '13': { 'url': "images/13.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_name' : 'Heavy water', 'proj_position': '1/7' },
+  '14': { 'url': "images/14.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_name' : 'Heavy water',  'proj_position': '2/7' },
+  '15': { 'url': "images/15.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_name' : 'Heavy water',  'proj_position': '3/7' },
+  '16': { 'url': "images/16.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_name' : 'Heavy water',  'proj_position': '4/7' },
+  '17': { 'url': "images/17.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_name' : 'Heavy water',  'proj_position': '5/7' },
+  '18': { 'url': "images/18.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_name' : 'Heavy water',  'proj_position': '6/7' },
+  '19': { 'url': "images/19.jpg", 'description': 'Heavy water, 2018', 'project': true, 'proj_name' : 'Heavy water',  'proj_position': '7/7' },
+  '20': { 'url': "images/20.jpg", 'description': 'Silent gestures, 2018', 'project': true, 'proj_name' : 'Silent gestures',  'proj_position': '1/4' },
+  '21': { 'url': "images/21.jpg", 'description': 'Silent gestures, 2018', 'project': true, 'proj_name' : 'Silent gestures',  'proj_position': '2/4' },
+  '22': { 'url': "images/22.jpg", 'description': 'Silent gestures, 2018', 'project': true, 'proj_name' : 'Silent gestures',  'proj_position': '3/4' },
+  '23': { 'url': "images/23.jpg", 'description': 'Silent gestures, 2018', 'project': true, 'proj_name' : 'Silent gestures',  'proj_position': '4/4' },
+  '24': { 'url': "images/24.jpg", 'description': 'Essential oil burner, Silent gestures, 2018', 'project': true, 'proj_name' : 'Silent gestures',  'proj_position': '1/2' },
+  '25': { 'url': "images/25.jpg", 'description': 'Essential oil diffuser, Silent gestures, 2018', 'project': true, 'proj_name' : 'Silent gestures',  'proj_position': '2/2' },
 };
 
 function navigation(direction) {
@@ -153,15 +154,11 @@ function setPhotoState() {
   $('#photography').fadeOut();
   let attribute = img.getAttribute('data-img');
   sessionStorage.setItem('photo', attribute);
+  images[attribute]['project'] ? sessionStorage.setItem('project', images[attribute]['proj_name']) : null;
 }
 
 function fadeOutBody() {
   $(document).ready(() => {
     $("body").fadeOut(1000);
-  })
+  });
 }
-
-
-$(document).ready(() => {
-  $("body").fadeIn(1000);
-})
