@@ -1,6 +1,20 @@
 console.log('Developed by Luís Conceição: https://www.linkedin.com/in/lu%C3%ADs-c-619364108/')
 
 $(document).ready(function () {
+
+  function preload(imageArray, index) {
+    index = index || 0;
+    if (imageArray && imageArray.length > index) {
+        var img = new Image ();
+        img.onload = function() {
+            preload(imageArray, index + 1);
+        }
+        img.src = preLoad[index];
+    }
+  }
+  /* images is an array with image metadata */
+  preload(preLoad);
+
   $("body").fadeIn(1000);
   if (sessionStorage.getItem("photo")) {
     img = sessionStorage.getItem("photo");
@@ -43,6 +57,14 @@ document.onkeydown = function (event) {
       break;
   }
 };
+
+var preLoad = ["https://imgur.com/bqhzW9R.jpg","https://imgur.com/vsJlC4T.jpg","https://imgur.com/2lTsJtJ.jpg",
+"https://imgur.com/XLhmqSi.jpg","https://imgur.com/Tf3YBnv.jpg","https://imgur.com/WU0LVVX.jpg","https://imgur.com/ppGPLXN.jpg",
+"https://imgur.com/WOtqiBt.jpg", "https://imgur.com/yz3Ji9V.jpg","https://imgur.com/An93mpw.jpg","https://imgur.com/kWLkVOM.jpg",
+"https://imgur.com/wEW1IMI.jpg", "https://imgur.com/AYATlj7.jpg", "https://imgur.com/p7g1L0V.jpg", "https://imgur.com/Z4Rzwrj.jpg",
+ "https://imgur.com/0SBcDop.jpg", "https://imgur.com/9epJG5M.jpg", "https://imgur.com/HUKqVU4.jpg", "https://imgur.com/Vgqtx0B.jpg",
+  "https://imgur.com/DhGvlzX.jpg", "https://imgur.com/Swsj0SP.jpg", "https://imgur.com/5i4Kqau.jpg", "https://imgur.com/iMd9160.jpg",
+   "https://imgur.com/oGYym4u.jpg", "https://imgur.com/GQl2n3p.jpg"];
 
 var images = {
   '1': { 'url': "https://imgur.com/bqhzW9R.jpg", 'description': 'Untitled, 2018', 'project': false },
