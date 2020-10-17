@@ -373,7 +373,7 @@ html, body#info {
  }
 
  @media (max-width: 575.98px) { 
-  #photography {
+  .photography {
     max-width: 325px;
     height: unset;
   }
