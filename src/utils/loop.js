@@ -3,7 +3,7 @@ console.log('Developed by Luís Conceição: https://www.linkedin.com/in/lu%C3%A
 document.addEventListener("DOMContentLoaded", function () {
 
   if (sessionStorage.getItem("photo")) {
-    img = sessionStorage.getItem("photo");
+    img = sessionStorage.getItem("photo").split('-')[1];
     document.getElementById(img).scrollIntoView();
     $("body").animate({ opacity: 1 },'1000');
   } else {

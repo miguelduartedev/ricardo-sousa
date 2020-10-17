@@ -64,12 +64,16 @@ a:hover {
   align-items: center;
 }
 
-#photography {
+.photography {
   max-width: 980px;
-  opacity: 0.3;
   align-self: center;
   margin: 0 auto;
   height: 580px;
+  display: none;
+}
+
+.-active {
+  display: unset;
 }
 
 #description, #info_description{
