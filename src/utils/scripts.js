@@ -121,15 +121,15 @@ function project_handler(nextImgDOM) {
 
 function mainToReadMe() {
   $('.firstFade').fadeOut('fast');
-  $('#main_section').animate({marginTop: '-300%'}, 'fast').fadeOut('slow');
-  $('.imagesLink').fadeIn('fast');
-  $('#readme').fadeIn('fast').animate({marginTop: '0'}, 300);
+  $('#main_section').animate({marginTop: '-300%'}, { duration: 300, queue: false }).fadeOut('slow');
+  $('.imagesLink').fadeIn({ duration: 300, queue: false });
+  $('#readme').fadeIn('fast').animate({marginTop: '0'}, { duration: 300, queue: false });
 }
 
 function readMeToMain() {
   $('.imagesLink').fadeOut('fast');
-  $('#readme').animate({marginTop: '500%'}, 'fast').fadeOut('fast');
-  $('#main_section').fadeIn('fast').animate({marginTop: '0'}, 'normal');
+  $('#readme').animate({marginTop: '500%'}, { duration: 300, queue: false }).fadeOut('fast');
+  $('#main_section').fadeIn('fast').animate({marginTop: '0'}, { duration: 400, queue: false });
   $('.firstFade').fadeIn('fast');
 }
 
