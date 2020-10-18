@@ -19,33 +19,35 @@
 
 <body style="display: none;">
 
-  <div class="happy">
-  <div class="container" style="align-self: center;">
-    <div class="row">
-      <div class="col-sm" id="landing_div">
+  <div class="landing">
+    <div class="container" style="align-self: center;">
+      <div class="row">
+        <div class="col-sm" id="landing_div">
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <div id="main_section" style="z-index: -1;position: absolute;top: 0;left: 0;right: 0;bottom: 0;">
     <div class="container w-100" id="top_menu" style="opacity: 0.3;max-width: 100%;position:fixed;z-index: 500;">
-      <div class="row" >
+      <div class="row">
         <div class="col-sm-12">
           <div onclick="mobile_nav('open')">
-          <img id="mobile_nav" data-state="open" src="images/nav_icon.svg" style="transform-style: flat;"/>
-        </div>
+            <img id="mobile_nav" data-state="open" src="images/nav_icon.svg" style="transform-style: flat;" />
+          </div>
 
-          <p id="menu"><a id="menu_option" onclick="setPhotoState()" href="overview.html">OVERVIEW &nbsp;</a> <a onclick="setPhotoState()" href="info.html">INFO</a></p>
-          <p id="side_author">RICARDO SOUSA</p>
+          <p id="menu"><a id="menu_option" onclick="setPhotoState()" href="overview.html">OVERVIEW &nbsp;</a> <a
+              onclick="mainToInfo();">INFO</a></p>
+          <p class="firstFade" id="side_author">RICARDO SOUSA</p>
         </div>
       </div>
     </div>
 
-    <div class="container w-100"  style="max-width: 100%; height: 100%;">
-      <div class="row"  style="height: 100%; ">
-        <div id="nav_previous" onclick="navigation('previous')" style="padding: 0;width: 50%;height: 100%;position: fixed;left: 0;">
-          
+    <div class="container w-100" style="max-width: 100%; height: 100%;">
+      <div class="row" style="height: 100%; ">
+        <div id="nav_previous" onclick="navigation('previous')"
+          style="padding: 0;width: 50%;height: 100%;position: fixed;left: 0;">
+
         </div>
         <div class="col-sm" style="
         display: inline-flex;
@@ -56,51 +58,293 @@
         z-index: -1;
     ">
           <div id="main_bloc">
-            <img class="photography" data-img="img-1" data-description="Untitled, 2018" data-project="false" src="https://imgur.com/bqhzW9R.jpg"/>
-            <img class="photography" data-img="img-2" data-description="Untitled, 2020" data-project="false" src="https://imgur.com/vsJlC4T.jpg"/>
-            <img class="photography" data-img="img-3" data-description="Untitled, Things come out of nothing, 2017" data-project="false" src="https://imgur.com/2lTsJtJ.jpg"/>
-            <img class="photography" data-img="img-4" data-description="Untitled, Things come out of nothing, 2017" data-project="false" src="https://imgur.com/XLhmqSi.jpg"/>
-            <img class="photography" data-img="img-5" data-description="Untitled, 2020" data-project="false" src="https://imgur.com/Tf3YBnv.jpg"/>
-            <img class="photography" data-img="img-6" data-description="Untitled, 2020" data-project="false" src="https://imgur.com/WU0LVVX.jpg"/>
-            <img class="photography" data-img="img-7" data-description="Untitled, 2020" data-project="false" src="https://imgur.com/ppGPLXN.jpg"/>
-            <img class="photography" data-img="img-8" data-description="Untitled, 2020" data-project="false" src="https://imgur.com/WOtqiBt.jpg"/>
-            <img class="photography" data-img="img-9" data-description="Untitled, Like angel, 2018 <br> Inkjet print on fine art cotton paper, nielsen white oak frame" data-project="false" src="https://imgur.com/yz3Ji9V.jpg"/>
-            <img class="photography" data-img="img-10" data-description="Untitled, Like angel, 2020" data-project="false" src="https://imgur.com/An93mpw.jpg"/>
-            <img class="photography" data-img="img-11" data-description="Untitled, Like angel, 2020" data-project="false" src="https://imgur.com/kWLkVOM.jpg"/>
-            <img class="photography" data-img="img-12" data-description="Untitled, Like angel, 2020" data-project="false" src="https://imgur.com/wEW1IMI.jpg"/>
-            <img class="photography" data-img="img-13" data-description="Heavy water, 2018" data-project="true" data-projectname="Heavy water" data-position="1/7" src="https://imgur.com/AYATlj7.jpg"/>
-            <img class="photography" data-img="img-14" data-description="Heavy water, 2018" data-project="true" data-projectname="Heavy water" data-position="2/7" src="https://imgur.com/p7g1L0V.jpg"/>
-            <img class="photography" data-img="img-15" data-description="Heavy water, 2018" data-project="true" data-projectname="Heavy water" data-position="3/7" src="https://imgur.com/Z4Rzwrj.jpg"/>
-            <img class="photography" data-img="img-16" data-description="Heavy water, 2018" data-project="true" data-projectname="Heavy water" data-position="4/7" src="https://imgur.com/0SBcDop.jpg"/>
-            <img class="photography" data-img="img-17" data-description="Heavy water, 2018" data-project="true" data-projectname="Heavy water" data-position="5/7" src="https://imgur.com/9epJG5M.jpg"/>
-            <img class="photography" data-img="img-18" data-description="Heavy water, 2018" data-project="true" data-projectname="Heavy water" data-position="6/7" src="https://imgur.com/HUKqVU4.jpg"/>
-            <img class="photography" data-img="img-19" data-description="Heavy water, 2018" data-project="true" data-projectname="Heavy water" data-position="7/7" src="https://imgur.com/Vgqtx0B.jpg"/>
-            <img class="photography" data-img="img-20" data-description="Silent gestures, 2018" data-project="true" data-projectname="Silent gestures" data-position="1/4" src="https://imgur.com/DhGvlzX.jpg"/>
-            <img class="photography" data-img="img-21" data-description="Silent gestures, 2018" data-project="true" data-projectname="Silent gestures" data-position="2/4" src="https://imgur.com/Swsj0SP.jpg"/>
-            <img class="photography" data-img="img-22" data-description="Silent gestures, 2018" data-project="true" data-projectname="Silent gestures" data-position="3/4" src="https://imgur.com/5i4Kqau.jpg"/>
-            <img class="photography" data-img="img-23" data-description="Silent gestures, 2018" data-project="true" data-projectname="Silent gestures" data-position="4/4" src="https://imgur.com/iMd9160.jpg"/>
-            <img class="photography" data-img="img-24" data-description="Essential oil burner, Silent gestures, 2018" data-projectname="Silent gestures" data-project="true" data-position="1/2" src="https://imgur.com/oGYym4u.jpg"/>
-            <img class="photography" data-img="img-25" data-description="Essential oil burner, Silent gestures, 2018" data-projectname="Silent gestures" data-project="true" data-position="2/2" src="https://imgur.com/GQl2n3p.jpg"/>
+            <img class="photography" data-img="img-1" data-description="Untitled, 2018" data-project="false"
+              src="https://imgur.com/bqhzW9R.jpg" />
+            <img class="photography" data-img="img-2" data-description="Untitled, 2020" data-project="false"
+              src="https://imgur.com/vsJlC4T.jpg" />
+            <img class="photography" data-img="img-3" data-description="Untitled, Things come out of nothing, 2017"
+              data-project="false" src="https://imgur.com/2lTsJtJ.jpg" />
+            <img class="photography" data-img="img-4" data-description="Untitled, Things come out of nothing, 2017"
+              data-project="false" src="https://imgur.com/XLhmqSi.jpg" />
+            <img class="photography" data-img="img-5" data-description="Untitled, 2020" data-project="false"
+              src="https://imgur.com/Tf3YBnv.jpg" />
+            <img class="photography" data-img="img-6" data-description="Untitled, 2020" data-project="false"
+              src="https://imgur.com/WU0LVVX.jpg" />
+            <img class="photography" data-img="img-7" data-description="Untitled, 2020" data-project="false"
+              src="https://imgur.com/ppGPLXN.jpg" />
+            <img class="photography" data-img="img-8" data-description="Untitled, 2020" data-project="false"
+              src="https://imgur.com/WOtqiBt.jpg" />
+            <img class="photography" data-img="img-9"
+              data-description="Untitled, Like angel, 2018 <br> Inkjet print on fine art cotton paper, nielsen white oak frame"
+              data-project="false" src="https://imgur.com/yz3Ji9V.jpg" />
+            <img class="photography" data-img="img-10" data-description="Untitled, Like angel, 2020"
+              data-project="false" src="https://imgur.com/An93mpw.jpg" />
+            <img class="photography" data-img="img-11" data-description="Untitled, Like angel, 2020"
+              data-project="false" src="https://imgur.com/kWLkVOM.jpg" />
+            <img class="photography" data-img="img-12" data-description="Untitled, Like angel, 2020"
+              data-project="false" src="https://imgur.com/wEW1IMI.jpg" />
+            <img class="photography" data-img="img-13" data-description="Heavy water, 2018" data-project="true"
+              data-projectname="Heavy water" data-position="1/7" src="https://imgur.com/AYATlj7.jpg" />
+            <img class="photography" data-img="img-14" data-description="Heavy water, 2018" data-project="true"
+              data-projectname="Heavy water" data-position="2/7" src="https://imgur.com/p7g1L0V.jpg" />
+            <img class="photography" data-img="img-15" data-description="Heavy water, 2018" data-project="true"
+              data-projectname="Heavy water" data-position="3/7" src="https://imgur.com/Z4Rzwrj.jpg" />
+            <img class="photography" data-img="img-16" data-description="Heavy water, 2018" data-project="true"
+              data-projectname="Heavy water" data-position="4/7" src="https://imgur.com/0SBcDop.jpg" />
+            <img class="photography" data-img="img-17" data-description="Heavy water, 2018" data-project="true"
+              data-projectname="Heavy water" data-position="5/7" src="https://imgur.com/9epJG5M.jpg" />
+            <img class="photography" data-img="img-18" data-description="Heavy water, 2018" data-project="true"
+              data-projectname="Heavy water" data-position="6/7" src="https://imgur.com/HUKqVU4.jpg" />
+            <img class="photography" data-img="img-19" data-description="Heavy water, 2018" data-project="true"
+              data-projectname="Heavy water" data-position="7/7" src="https://imgur.com/Vgqtx0B.jpg" />
+            <img class="photography" data-img="img-20" data-description="Silent gestures, 2018" data-project="true"
+              data-projectname="Silent gestures" data-position="1/4" src="https://imgur.com/DhGvlzX.jpg" />
+            <img class="photography" data-img="img-21" data-description="Silent gestures, 2018" data-project="true"
+              data-projectname="Silent gestures" data-position="2/4" src="https://imgur.com/Swsj0SP.jpg" />
+            <img class="photography" data-img="img-22" data-description="Silent gestures, 2018" data-project="true"
+              data-projectname="Silent gestures" data-position="3/4" src="https://imgur.com/5i4Kqau.jpg" />
+            <img class="photography" data-img="img-23" data-description="Silent gestures, 2018" data-project="true"
+              data-projectname="Silent gestures" data-position="4/4" src="https://imgur.com/iMd9160.jpg" />
+            <img class="photography" data-img="img-24" data-description="Essential oil burner, Silent gestures, 2018"
+              data-projectname="Silent gestures" data-project="true" data-position="1/2"
+              src="https://imgur.com/oGYym4u.jpg" />
+            <img class="photography" data-img="img-25" data-description="Essential oil burner, Silent gestures, 2018"
+              data-projectname="Silent gestures" data-project="true" data-position="2/2"
+              src="https://imgur.com/GQl2n3p.jpg" />
             <p id="author">RICARDO SOUSA</p>
           </div>
         </div>
-        <div id="nav_next" onclick="navigation('next')" style="padding: 0;width: 50%;height: 100%;position: fixed;right: 0;">
-          
+        <div id="nav_next" onclick="navigation('next')"
+          style="padding: 0;width: 50%;height: 100%;position: fixed;right: 0;">
+
         </div>
       </div>
     </div>
 
     <div class="container w-100" id="footer" style="opacity: 0.3;max-width: 100%;position: fixed;bottom: 0px;">
-      <div class="row" >
-        <div class="col-sm-12" style="margin-top: 15px;">
+      <div class="row">
+        <div class="col-sm-12 firstFade" style="margin-top: 15px;">
           <p id="description"></p>
-          <p id="read" onclick="fadeOutBody(),setPhotoState()" style="float:left; visibility:hidden;"><a href="readme.html">Read</a></p>
+          <p class="read" data-reference="index" style="float:left; visibility:hidden;">
+            <a onclick="textHandler();mainToReadMe()">Read</a></p>
           <p id="counter" style="float:right; visibility:hidden;">1/X</p>
         </div>
       </div>
     </div>
   </div>
 
-</body>
+  <!-- READ ME SECTION -->
 
+  <div id="readme" style="display: none;margin-top: 100%;">
+    <div class="container w-100">
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div id="readme_div" class="col-sm-8" style="margin-top: 15px;">
+          <p id="readme_title"></p>
+          <p id="readme_description"></p>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+      <div class="container w-100" id="footer">
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="read imagesLink"><a onclick="readMeToMain()">Images</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO SECTION -->
+
+  <div id="info" style="display: none;">
+
+      <div id="">
+        <div class="container w-100" id="top_menu">
+          <div class="row">
+            <div class="col-sm-12">
+              <p id="back"><a onclick="infoToMain()" style="text-decoration: none;color:black;">BACK</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="ricardo_info">
+          <p class="info_intro">Ricardo Sousa is a designer and photographer based in Cascais, Portugal. In 2016 he
+            completed his degree at
+            Faculdade de Belas-Artes of the Universidade de Lisboa. </p>
+          <p class="info_intro">He currently works between the fields of design &amp; photography.  His work is
+            characterised by an
+            experimental &amp;
+            multidisciplinary nature within a meticulous and high-detail focused aesthetic. He is now researching &amp;
+            developing pieces around portuguese &amp; international marble.
+          </p>
+          <p class="info_intro">Full portfolio and cv available upon request.</p>
+        </div>
+        <div class="ricardo_info">
+          <p>
+            Solo exhibitions
+          </p>
+          <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0lax">
+                  <p class="info_date">
+                    2019 </p>
+                </th>
+                <th class="tg-0lax">
+                  <p class="info_resume_top"> O Olhar Divergente - As Residências do Pico do Refúgio como Património
+                    Prospectivo
+                    with
+                    Petal Head
+                  </p>
+                  <p class="info_resume_bottom">
+                    Arquipélago – Centro de Artes Contemporâneas, Azores</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">
+                  <p class="info_date">2018</p>
+                </td>
+                <td class="tg-0lax">
+                  <p class="info_resume_top">Silent Gestures</p>
+                  <p class="info_resume_bottom">
+                    Fábrica Features Gallery</p>
+                </td>
+              </tr>
+              <tr>
+              <tr>
+                <td class="tg-0lax">
+                  <p class="info_date"></p>
+                </td>
+                <td class="tg-0lax">
+                  <p class="info_resume_top">Like Angel</p>
+                  <p class="info_resume_bottom">
+                    Museu das Artes de Sintra – MUSA</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">
+                  <p class="info_date">2016</p>
+                </td>
+                <td class="tg-0lax">
+                  <p class="info_resume_top">Things come out of Nothing</p>
+                  <p class="info_resume_bottom">
+                    Arquivo Municipal Fotográfico de Lisboa</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Collective exhibitions
+          </p>
+          </style>
+          <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0lax">
+                  <p class="info_date">
+                    2019</p>
+                </th>
+                <th class="tg-0lax">
+                  <p class="info_resume_top">Silent Gestures</p>
+                  <p class="info_resume_bottom">
+                    Fábrica Features Gallery</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">
+                  <p class="info_date">2018</p>
+                </td>
+                <td class="tg-0lax">
+                  <p class="info_resume_top">Like Angel
+                  </p>
+                  <p class="info_resume_bottom">
+                    Museu das Artes de Sintra – MUSA</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Publications
+          </p>
+          </style>
+          <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0lax">
+                  <p class="info_date">
+                    2020</p>
+                </th>
+                <th class="tg-0lax">
+                  <p class="info_resume_top">Dose Magazine IV (online and printed versions)</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">
+                  <p class="info_date">2018</p>
+                </td>
+                <td class="tg-0lax">
+                  <p class="info_resume_top">Attitude Magazine (interior design)
+                  </p>
+                  <p class="info_resume_bottom">
+                    Enchantment no. 84 Nov – Dec 18</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Contact
+          </p>
+          </style>
+          <table class="tg" style="margin-bottom: 73px;">
+            <thead>
+              <tr>
+                <th class="tg-0lax">
+                  <p class="info_date" style="margin-right:12px;">
+                    Email</p>
+                </th>
+                <th class="tg-0lax">
+                  <p class="info_resume_top">info@ricardo-sousa.com</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">
+                  <p class="info_date" style="margin-right:12px;">Instagram</p>
+                </td>
+                <td class="tg-0lax">
+                  <p class="info_resume_top">
+                    @ricardosousanunes</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="info_footer">
+            <div class="left">Design by Mónica Tomás, Built by Luís Conceição</div>
+            <div class="center" id="info_description">All rights reserved © 2020 Ricardo Sousa</div>
+          </div>
+          <!-- <div class="container w-100" id="footer" style="max-width: 100%;bottom: 20px;">
+            <div class="row">
+              <div class="col-sm-12" style="margin-top: 15px;">
+                <p id="description" style="
+                  display: inline-block;
+                  width: 100%;
+                  bottom: 20px;
+                  right:0;
+              ">All rights reserved © 2020 Ricardo Sousa</p>
+                <p id="read" style="float:left;">Website by Mónica Tomás</p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+</body>
 </html>
