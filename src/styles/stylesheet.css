@@ -186,8 +186,8 @@ img.overview {
 
 @media (max-width: 767.98px) {
   img.overview {
-    max-width: 285px;
-    max-height: 400px;
+    max-width: 285px !important;
+    height: 180px !important;
   }
 }
 
@@ -223,10 +223,16 @@ body#overview {
   overflow: hidden;
 }
 
+#overview {
+  height: 100%;
+  overflow: hidden;
+}
+
 .Loop {
   position: relative;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -441,6 +447,7 @@ body#info {
   .photography {
     max-width: 325px;
     height: unset;
+    max-height: 420px;
   }
 
   #side_author {
@@ -575,4 +582,9 @@ body#info {
 
     color: #000000;
   }
+}
+
+.nopadding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }

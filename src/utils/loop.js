@@ -95,6 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function setPhotoState(photo) {
+/* function setPhotoState(photo) {
   sessionStorage.setItem('photo', photo.getAttribute("data-img"));
-}
+} */
