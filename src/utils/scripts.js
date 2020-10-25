@@ -326,8 +326,10 @@ function overviewToMain() {
 
 function reset_mobile_nav() {
   let nav = document.getElementById("mobile_nav");
-  nav.setAttribute('data-state', 'close');
-  mobile_nav();
+  if ( window.innerWidth <= 767.98 ) {
+    nav.setAttribute('data-state', 'close');
+    mobile_nav();
+  }
 }
 
 function mobile_nav() {
