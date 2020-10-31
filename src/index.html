@@ -98,7 +98,7 @@
         <div class="col-sm-12 firstFade" style="margin-top: 15px;">
           <p id="description"></p>
           <p class="read" data-reference="index" style="float:left; visibility:hidden;">
-            <a onclick="textHandler();mainToReadMe()">Read</a></p>
+            <a onclick="textHandler();mainToReadMe();refreshParams('readme');">Read</a></p>
           <p id="counter" style="float:right; visibility:hidden;">1/X</p>
         </div>
       </div>
@@ -120,7 +120,7 @@
       <div class="container w-100" id="footer">
         <div class="row">
           <div class="col-sm-12">
-            <p class="read imagesLink"><a onclick="readMeToMain()">Images</a></p>
+            <p class="read imagesLink"><a onclick="readMeToMain();refreshParams('current_active');">Images</a></p>
           </div>
         </div>
       </div>
@@ -440,7 +440,7 @@
               </div>
             </section>
       
-            <section class="" id="row">
+            <section class="" id="roww">
               <div class="row">
                 <div class="col-12 col-md-6 nopadding" style="text-align: center;">
                 </div>
