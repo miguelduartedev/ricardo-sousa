@@ -165,6 +165,7 @@ a:hover {
 
 img.overview {
   max-width: 450px;
+  padding-top: 20px;
 }
 
 .overview.height-280 {
@@ -185,6 +186,9 @@ img.overview {
 }
 
 @media (max-width: 767.98px) {
+  #row {
+  margin: 90px 0 90px 0;
+}
   img.overview {
     max-width: 285px !important;
     height: 180px !important;
