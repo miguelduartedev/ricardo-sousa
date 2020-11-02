@@ -72,10 +72,9 @@ a:hover {
 }
 
 .photography {
-  max-width: 980px;
   align-self: center;
   margin: 0 auto;
-  height: 80vh;
+  height: 70vh;
   display: none;
 }
 
