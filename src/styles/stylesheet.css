@@ -178,14 +178,21 @@ img.overview {
   height: 400px;
 }
 
-#row {
-  margin: 150px 0 150px 0;
+.row_spacing {
+  margin: 170px 0 150px 0;
   max-width: 100%;
 }
 
+.rowPadding {
+  padding-top: 30px;
+}
+
 @media (max-width: 767.98px) {
-  #row {
-  margin: 90px 0 90px 0;
+.row_spacing {
+  margin: 130px 0 90px 0;
+}
+.rowPadding {
+  padding-top: 50px;
 }
   img.overview {
     max-width: 285px !important;
