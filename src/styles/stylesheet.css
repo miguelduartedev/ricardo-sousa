@@ -505,7 +505,7 @@ body#info {
   }
 
   #info_bg {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%; 
 
