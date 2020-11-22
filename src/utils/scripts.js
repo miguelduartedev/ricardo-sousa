@@ -190,6 +190,13 @@ $(document).ready(function () {
       }
     }
   }
+  if (window.innerWidth <= 767.98) {
+    if ($('#counter').css('visibility') == 'hidden') {
+      $('#description').css('margin-bottom',"-20px");
+    }
+  }
+  let currentImg = document.querySelector(".-active");
+  document.querySelector("#info_bg").src = currentImg.src;
 });
 
 document.onkeydown = function (event) {
@@ -210,6 +217,8 @@ document.onkeydown = function (event) {
       break;
   }
 };
+
+// Randomize imagem
 
 function randomizeImage() {
   const landingImage = Math.floor(Math.random() * 5) + 1;
@@ -280,6 +289,15 @@ function navigation(direction) {
       refreshParams(nextImg.dataset.url);
     }
   }
+  if (window.innerWidth <= 767.98) {
+    if ($('#counter').css('visibility') == 'hidden') {
+      $('#description').css('margin-bottom',"-20px");
+    } else {
+      $('#description').css('margin-bottom',"10px");
+    }
+  }
+  let currentImg = document.querySelector(".-active");
+  document.querySelector("#info_bg").src = currentImg.src;
 }
 
 function project_handler(nextImgDOM) {
@@ -297,16 +315,16 @@ function project_handler(nextImgDOM) {
 
 function mainToReadMe() {
   $(".firstFade").fadeOut("fast");
+  $("#readme").fadeIn("fast").animate({ marginTop: "0" }, { duration: 300, queue: false });
   $("#main_section").animate({ marginTop: "-300%" }, { duration: 300, queue: false }).fadeOut("slow");
   $(".imagesLink").fadeIn({ duration: 300, queue: false });
-  $("#readme").fadeIn("fast").animate({ marginTop: "0" }, { duration: 300, queue: false });
 }
 
 function readMeToMain() {
   reset_mobile_nav();
   $(".imagesLink").fadeOut("fast");
+  $("#main_section").fadeIn("fast").animate({ marginTop: "0" }, { duration: 300, queue: false });
   $("#readme").animate({ marginTop: "500%" }, { duration: 300, queue: false }).fadeOut("fast");
-  $("#main_section").fadeIn("fast").animate({ marginTop: "0" }, { duration: 400, queue: false });
   $(".firstFade").fadeIn("fast");
   $("#footer").animate({ opacity: 1 });
 }
@@ -323,6 +341,8 @@ function infoToMain() {
   $("#info").fadeOut("fast");
   $("#main_section").fadeIn("fast");
   $(".firstFade").fadeIn("fast");
+  let currentImg = document.querySelector(".-active");
+  document.querySelector("#description").innerHTML = currentImg.dataset.description;
   refreshParams(document.querySelector(".-active").dataset.url);
 }
 

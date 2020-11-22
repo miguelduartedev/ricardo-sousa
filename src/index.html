@@ -97,9 +97,10 @@
       <div class="row">
         <div class="col-sm-12 firstFade" style="margin-top: 15px;">
           <p id="description"></p>
-          <p class="read" data-reference="index" style="float:left; visibility:hidden;">
-            <a onclick="textHandler();mainToReadMe();refreshParams('readme');">Read</a></p>
           <p id="counter" style="float:right; visibility:hidden;">1/X</p>
+          <p class="read" data-reference="index">
+            <a onclick="textHandler();mainToReadMe();refreshParams('readme');">Read</a>
+          </p>
         </div>
       </div>
     </div>
@@ -120,7 +121,7 @@
       <div class="container w-100" id="footer">
         <div class="row">
           <div class="col-sm-12">
-            <p class="read imagesLink"><a onclick="readMeToMain();refreshParams('current_active');">Images</a></p>
+            <p class="imagesLink"><a onclick="readMeToMain();refreshParams('current_active');">Images</a></p>
           </div>
         </div>
       </div>
@@ -131,6 +132,7 @@
 
   <div id="info" style="display: none;">
 
+    <img id="info_bg">
       <div id="">
         <div class="container w-100" id="top_menu">
           <div class="row">
@@ -153,17 +155,17 @@
           <p class="info_intro">Full portfolio and cv available upon request.</p>
         </div>
         <div class="ricardo_info">
-          <p>
+          <p class="table_title">
             Solo exhibitions
           </p>
           <table class="tg">
             <thead>
               <tr>
-                <th class="tg-0lax">
+                <th class="mobileInfoDate tg-0lax">
                   <p class="info_date">
                     2019 </p>
                 </th>
-                <th class="tg-0lax">
+                <th class="mobileInfoText tg-0lax">
                   <p class="info_resume_top"> O Olhar Divergente - As Residências do Pico do Refúgio como Património
                     Prospectivo
                     with
@@ -176,10 +178,10 @@
             </thead>
             <tbody>
               <tr>
-                <td class="tg-0lax">
-                  <p class="info_date">2018</p>
+                <td class="mobileInfoDate tg-0lax">
+                  <p class="info_date middleDate">2018</p>
                 </td>
-                <td class="tg-0lax">
+                <td class="mobileInfoText tg-0lax">
                   <p class="info_resume_top">Silent Gestures</p>
                   <p class="info_resume_bottom">
                     Fábrica Features Gallery</p>
@@ -187,20 +189,20 @@
               </tr>
               <tr>
               <tr>
-                <td class="tg-0lax">
+                <td class="mobileInfoDate tg-0lax">
                   <p class="info_date"></p>
                 </td>
-                <td class="tg-0lax">
+                <td class="mobileInfoText tg-0lax">
                   <p class="info_resume_top">Like Angel</p>
                   <p class="info_resume_bottom">
                     Museu das Artes de Sintra – MUSA</p>
                 </td>
               </tr>
               <tr>
-                <td class="tg-0lax">
-                  <p class="info_date">2016</p>
+                <td class="mobileInfoDate tg-0lax">
+                  <p class="info_date middleDate">2016</p>
                 </td>
-                <td class="tg-0lax">
+                <td class="mobileInfoText tg-0lax">
                   <p class="info_resume_top">Things come out of Nothing</p>
                   <p class="info_resume_bottom">
                     Arquivo Municipal Fotográfico de Lisboa</p>
@@ -208,18 +210,18 @@
               </tr>
             </tbody>
           </table>
-          <p>
+          <p class="table_title">
             Collective exhibitions
           </p>
           </style>
           <table class="tg">
             <thead>
               <tr>
-                <th class="tg-0lax">
+                <th class="mobileInfoDate tg-0lax">
                   <p class="info_date">
                     2019</p>
                 </th>
-                <th class="tg-0lax">
+                <th class="mobileInfoText tg-0lax">
                   <p class="info_resume_top">Silent Gestures</p>
                   <p class="info_resume_bottom">
                     Fábrica Features Gallery</p>
@@ -228,10 +230,10 @@
             </thead>
             <tbody>
               <tr>
-                <td class="tg-0lax">
-                  <p class="info_date">2018</p>
+                <td class="mobileInfoDate tg-0lax">
+                  <p class="info_date middleDate">2018</p>
                 </td>
-                <td class="tg-0lax">
+                <td class="mobileInfoText tg-0lax">
                   <p class="info_resume_top">Like Angel
                   </p>
                   <p class="info_resume_bottom">
@@ -240,28 +242,28 @@
               </tr>
             </tbody>
           </table>
-          <p>
+          <p class="table_title">
             Publications
           </p>
           </style>
           <table class="tg">
             <thead>
               <tr>
-                <th class="tg-0lax">
+                <th class="mobileInfoDate tg-0lax">
                   <p class="info_date">
                     2020</p>
                 </th>
-                <th class="tg-0lax">
+                <th class="mobileInfoText tg-0lax">
                   <p class="info_resume_top">Dose Magazine IV (online and printed versions)</p>
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="tg-0lax">
-                  <p class="info_date">2018</p>
+                <td class="mobileInfoDate tg-0lax">
+                  <p class="info_date middleDate">2018</p>
                 </td>
-                <td class="tg-0lax">
+                <td class="mobileInfoText tg-0lax">
                   <p class="info_resume_top">Attitude Magazine (interior design)
                   </p>
                   <p class="info_resume_bottom">
@@ -270,28 +272,28 @@
               </tr>
             </tbody>
           </table>
-          <p>
+          <p class="table_title">
             Contact
           </p>
           </style>
-          <table class="tg" style="margin-bottom: 73px;">
+          <table class="tg" style="margin-bottom: 40px;">
             <thead>
               <tr>
-                <th class="tg-0lax">
+                <th class="mobileInfoDate tg-0lax">
                   <p class="info_date" style="margin-right:12px;">
                     Email</p>
                 </th>
-                <th class="tg-0lax">
+                <th class="mobileInfoText tg-0lax">
                   <p class="info_resume_top">info@ricardo-sousa.com</p>
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="tg-0lax">
+                <td class="mobileInfoDate tg-0lax pt-0">
                   <p class="info_date" style="margin-right:12px;">Instagram</p>
                 </td>
-                <td class="tg-0lax">
+                <td class="mobileInfoText tg-0lax">
                   <p class="info_resume_top">
                     @ricardosousanunes</p>
                 </td>
