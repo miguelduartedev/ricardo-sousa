@@ -301,15 +301,11 @@ html {
   width: 0px;
   background: transparent;
   -webkit-appearance: none;
-    width: 0;
-    height: 0;
 }
 
 ::-webkit-scrollbar-thumb {
   background: transparent;
   -webkit-appearance: none;
-    width: 0;
-    height: 0;
 }
 
 html,
