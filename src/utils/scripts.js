@@ -190,7 +190,7 @@ $(document).ready(function () {
       }
     }
   }
-  if (window.innerWidth <= 767.98) {
+  if (window.innerWidth <= 575.98) {
     if ($('#counter').css('visibility') == 'hidden') {
       $('#description').css('margin-bottom', "-20px");
     }
@@ -292,7 +292,7 @@ function navigation(direction) {
       refreshParams(nextImg.dataset.url);
     }
   }
-  if (window.innerWidth <= 767.98) {
+  if (window.innerWidth <= 575.98) {
     if ($('#counter').css('visibility') == 'hidden') {
       $('#description').css('margin-bottom', "-20px");
     } else {
