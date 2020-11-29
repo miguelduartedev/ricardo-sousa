@@ -74,12 +74,21 @@ a:hover {
 .photography {
   align-self: center;
   margin: 0 auto;
-  height: 70vh;
+  max-height: 70vh;
+  transition: max-height 0.25s ease-in;
   display: none;
 }
 
 .-active {
   display: unset;
+}
+
+#nav_next {
+  cursor: e-resize;
+}
+
+#nav_previous {
+  cursor: w-resize;
 }
 
 #description,
@@ -161,7 +170,7 @@ a:hover {
 }
 
 #info_bg {
-  z-index: 0;
+  z-index: -1;
   position: -webkit-sticky;
   position: fixed;
   top: 15%;
@@ -182,6 +191,21 @@ a:hover {
   }
 }
 
+@media (max-width: 1280px) {
+  .wide {
+  max-height: 50vh;
+  } 
+}
+
+@media (max-width: 900px) {
+  .photography {
+    max-height: 50vh;
+  }
+  .wide {
+    max-height: 30vh;
+  }
+}
+
 img.overview {
   max-width: 450px;
 }
@@ -197,6 +221,23 @@ img.overview {
 .overview.height-400 {
   height: 400px;
 }
+
+/* @media (min-width: 1680px) {
+.overview.height-280 {
+  height: 380px;
+  max-width: 500px;
+}
+
+.overview.height-350 {
+  height: 450px;
+  max-width: 500px;
+}
+
+.overview.height-400 {
+  height: 500px;
+  max-width: 500px;
+}
+} */
 
 .row_spacing {
   margin: 170px 0 150px 0;
@@ -216,7 +257,6 @@ img.overview {
       height: 40vh;
     }
 }
-
 
 @media (max-width: 767.98px) {
   #info .center {
@@ -260,10 +300,16 @@ html {
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
+  -webkit-appearance: none;
+    width: 0;
+    height: 0;
 }
 
 ::-webkit-scrollbar-thumb {
   background: transparent;
+  -webkit-appearance: none;
+    width: 0;
+    height: 0;
 }
 
 html,
@@ -357,7 +403,6 @@ body#info {
 }
 
 .tg td {
-  font-family: Arial, sans-serif;
   font-size: 14px;
   overflow: hidden;
   padding: 10px 5px;
@@ -365,7 +410,6 @@ body#info {
 }
 
 .tg th {
-  font-family: Arial, sans-serif;
   font-size: 14px;
   font-weight: normal;
   overflow: hidden;
@@ -421,7 +465,6 @@ body#info {
   float: left;
   position: absolute;
   text-decoration-line: none;
-  margin-bottom: 25px;
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
@@ -429,6 +472,10 @@ body#info {
   line-height: 16px;
   letter-spacing: -0.03em;
   color: #000000;
+}
+
+.left_anchor:hover {
+  text-decoration: underline;
 }
 
 #info .center {
@@ -493,9 +540,38 @@ body#info {
 }
 
 @media (max-width: 575.98px) {
+  .left_anchor:last-of-type{
+    display: block;
+  }
+  
+  .left_anchor {
+    line-height: 20px;
+  }
+
+  #top_menu {
+  font-size: 16px;
+}
+
+.info_intro {
+  line-height: 28px;
+}
+
+.info_date {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+#menu {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
   #description,
   #info_description {
     font-size: 16px;
+    padding-top: 15px;
   }
 
   .photography, #info_bg {
@@ -560,7 +636,7 @@ body#info {
 
   .table_title {
     margin-bottom: 0;
-    line-height: 19px;
+    line-height: 25px;
   }
 
   .tg {
@@ -583,7 +659,7 @@ body#info {
     display: block;
     float: right;
     margin-right: 10px;
-    margin-top: 25px;
+    margin-top: 23px;
     transition-duration: 0.2s;
   }
 
