@@ -300,12 +300,10 @@ html {
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
-  -webkit-appearance: none;
 }
 
 ::-webkit-scrollbar-thumb {
   background: transparent;
-  -webkit-appearance: none;
 }
 
 html,
