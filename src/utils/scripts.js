@@ -144,14 +144,7 @@ $(document).ready(function () {
           project_handler(image);
           image.classList.add("-active");
           description.innerHTML = image.dataset.description;
-          $(".landing").click(function () {
-            $(".landing").fadeOut();
-            $("#author").fadeOut();
-            $("#top_menu").animate({ opacity: 1 });
-            $(".-active").animate({ opacity: 1 });
-            $("#footer").animate({ opacity: 1 });
-            $("#side_author").animate({ opacity: 1 });
-          });
+          hideLanding();
         }
       }
     });
@@ -179,14 +172,7 @@ $(document).ready(function () {
           opacity: 1
         });
         description.innerHTML = imgInDOM.dataset.description;
-        $(".landing").click(function () {
-          $(".landing").fadeOut();
-          $("#author").fadeOut();
-          $("#top_menu").animate({ opacity: 1 });
-          $(".-active").animate({ opacity: 1 });
-          $("#footer").animate({ opacity: 1 });
-          $("#side_author").animate({ opacity: 1 });
-        });
+        hideLanding();
       }
     }
   }
@@ -221,6 +207,22 @@ document.onkeydown = function (event) {
   }
 };
 
+
+// fades out ricardo sousa layer
+function hideLanding() {
+  $(".landing, #nav_next, #nav_previous").click(function () {
+    if ($(".landing").hasClass('-visible')) {
+      $(".landing").fadeOut();
+      $(".landing").removeClass('-visible');
+      $("#author").fadeOut();
+      $("#top_menu").animate({ opacity: 1 });
+      $(".-active").animate({ opacity: 1 });
+      $("#footer").animate({ opacity: 1 });
+      $("#side_author").animate({ opacity: 1 });
+    }
+  });
+}
+
 // Randomize imagem
 
 function randomizeImage() {
@@ -247,60 +249,63 @@ function navigation(direction) {
   let img = document.querySelector(".-active");
   let description = document.getElementById("description");
   let current_img = img.getAttribute("data-img").split("-")[1];
-  if (direction === "previous") {
-    if (parseInt(current_img) > 1) {
-      current_img--;
-      let nextImg = document.querySelector(
-        "[data-img= img-" + current_img + "]"
-      );
-      img.classList.remove("-active");
-      nextImg.classList.add("-active");
-      description.innerHTML = nextImg.dataset.description;
-      project_handler(nextImg);
-      refreshParams(nextImg.dataset.url);
-    } else {
-      current_img = 25;
-      let nextImg = document.querySelector(
-        "[data-img= img-" + current_img + "]"
-      );
-      img.classList.remove("-active");
-      nextImg.classList.add("-active");
-      description.innerHTML = nextImg.dataset.description;
-      project_handler(nextImg);
-      refreshParams(nextImg.dataset.url);
+  hideLanding()
+  if (!document.querySelector('.-visible')) {
+    if (direction === "previous") {
+      if (parseInt(current_img) > 1) {
+        current_img--;
+        let nextImg = document.querySelector(
+          "[data-img= img-" + current_img + "]"
+        );
+        img.classList.remove("-active");
+        nextImg.classList.add("-active");
+        description.innerHTML = nextImg.dataset.description;
+        project_handler(nextImg);
+        refreshParams(nextImg.dataset.url);
+      } else {
+        current_img = 25;
+        let nextImg = document.querySelector(
+          "[data-img= img-" + current_img + "]"
+        );
+        img.classList.remove("-active");
+        nextImg.classList.add("-active");
+        description.innerHTML = nextImg.dataset.description;
+        project_handler(nextImg);
+        refreshParams(nextImg.dataset.url);
+      }
+    } else if (direction === "next") {
+      if (parseInt(current_img) !== 25) {
+        current_img++;
+        let nextImg = document.querySelector(
+          "[data-img= img-" + current_img + "]"
+        );
+        img.classList.remove("-active");
+        nextImg.classList.add("-active");
+        description.innerHTML = nextImg.dataset.description;
+        project_handler(nextImg);
+        refreshParams(nextImg.dataset.url);
+      } else {
+        current_img = 1;
+        let nextImg = document.querySelector(
+          "[data-img= img-" + current_img + "]"
+        );
+        img.classList.remove("-active");
+        nextImg.classList.add("-active");
+        description.innerHTML = nextImg.dataset.description;
+        project_handler(nextImg);
+        refreshParams(nextImg.dataset.url);
+      }
     }
-  } else if (direction === "next") {
-    if (parseInt(current_img) !== 25) {
-      current_img++;
-      let nextImg = document.querySelector(
-        "[data-img= img-" + current_img + "]"
-      );
-      img.classList.remove("-active");
-      nextImg.classList.add("-active");
-      description.innerHTML = nextImg.dataset.description;
-      project_handler(nextImg);
-      refreshParams(nextImg.dataset.url);
-    } else {
-      current_img = 1;
-      let nextImg = document.querySelector(
-        "[data-img= img-" + current_img + "]"
-      );
-      img.classList.remove("-active");
-      nextImg.classList.add("-active");
-      description.innerHTML = nextImg.dataset.description;
-      project_handler(nextImg);
-      refreshParams(nextImg.dataset.url);
+    if (window.innerWidth <= 575.98) {
+      if ($('#counter').css('visibility') == 'hidden') {
+        $('#description').css('margin-bottom', "-20px");
+      } else {
+        $('#description').css('margin-bottom', "10px");
+      }
     }
+    let currentImg = document.querySelector(".-active");
+    document.querySelector("#info_bg").src = currentImg.src;
   }
-  if (window.innerWidth <= 575.98) {
-    if ($('#counter').css('visibility') == 'hidden') {
-      $('#description').css('margin-bottom', "-20px");
-    } else {
-      $('#description').css('margin-bottom', "10px");
-    }
-  }
-  let currentImg = document.querySelector(".-active");
-  document.querySelector("#info_bg").src = currentImg.src;
 }
 
 function project_handler(nextImgDOM) {
