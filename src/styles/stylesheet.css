@@ -83,11 +83,11 @@ a:hover {
   display: unset;
 }
 
-#nav_next {
+#nav_next.-operating {
   cursor: e-resize;
 }
 
-#nav_previous {
+#nav_previous.-operating {
   cursor: w-resize;
 }
 

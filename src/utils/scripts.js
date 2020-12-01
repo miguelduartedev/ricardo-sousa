@@ -207,6 +207,13 @@ document.onkeydown = function (event) {
   }
 };
 
+document.querySelector('nav_next').addEventListener("mouseover", cursorHandler());
+
+function cursorHandler() {
+  if (document.getElementById("author").style.display === "none") {
+    navigation("previous");
+  }
+}
 
 // fades out ricardo sousa layer
 function hideLanding() {
@@ -219,6 +226,7 @@ function hideLanding() {
       $(".-active").animate({ opacity: 1 });
       $("#footer").animate({ opacity: 1 });
       $("#side_author").animate({ opacity: 1 });
+      $("#nav_next, #nav_previous").addClass('-operating');
     }
   });
 }
