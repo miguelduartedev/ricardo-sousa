@@ -543,8 +543,11 @@ body#info {
   }
 
   #top_menu {
-  font-size: 16px;
-}
+    font-size: 16px;
+    position: sticky;
+      top: 0;
+      background: white;
+  }
 
 .info_intro {
   line-height: 28px;
@@ -677,10 +680,16 @@ body#info {
 
   #info .ricardo_info {
     font-size: 25px;
+    margin: 0px 25px 0px 25px;
+  }
+
+  #info .ricardo_info ~ .ricardo_info {
     margin: 25px 25px 0px 25px;
   }
 
-
+  #info #back {
+    margin-bottom: 15px;
+  }
 
   .tg .tg-0lax .info_resume_top {
     font-family: Neue Haas Grotesk Text Pro;
@@ -718,12 +727,23 @@ body#info {
     margin-bottom: 2rem !important;
   }
 
+  #footer .imagesLink {
+    font-size: 16px;
+    line-height: 70px;
+    margin-bottom: 0;
+  }
+
   #readme #footer {
     max-width: unset;
     position: unset;
     bottom: unset;
     left: unset;
     text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    height: 70px;
   }
 
   #readme #readlink {

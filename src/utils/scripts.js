@@ -134,7 +134,9 @@ $(document).ready(function () {
           $("#author").fadeOut();
           $("#counter, [data-reference=index], #description").css("visibility", "visible");
           $("#counter, [data-reference=index], #description").css("opacity", "1");
-          document.getElementById('description').innerHTML = image.dataset.description;
+          $("#description").html(image.dataset.description);
+          $("#counter").html(image.dataset.position);
+          $(".landing").removeClass('-visible');
           $(".imagesLink").fadeIn();
           $("#readme").animate({ marginTop: "0" }, { duration: 100, queue: true }).promise();
           $("#readme").fadeIn('slow').promise();
