@@ -265,7 +265,7 @@ function navigation(direction) {
         project_handler(nextImg);
         refreshParams(nextImg.dataset.url);
       } else {
-        current_img = 25;
+        current_img = document.querySelectorAll('.photography').length;
         let nextImg = document.querySelector(
           "[data-img= img-" + current_img + "]"
         );
@@ -276,7 +276,7 @@ function navigation(direction) {
         refreshParams(nextImg.dataset.url);
       }
     } else if (direction === "next") {
-      if (parseInt(current_img) !== 25) {
+      if (parseInt(current_img) !== document.querySelectorAll('.photography').length) {
         current_img++;
         let nextImg = document.querySelector(
           "[data-img= img-" + current_img + "]"
@@ -380,6 +380,8 @@ function overviewToMain() {
   $("#main_section").fadeIn("fast");
   $(".firstFade").fadeIn("fast");
   refreshParams(document.querySelector(".-active").dataset.url);
+  let currentImg = document.querySelector(".-active");
+  document.querySelector("#info_bg").src = currentImg.src;
 }
 
 function reset_mobile_nav() {
@@ -427,7 +429,6 @@ function setOverviewImg(photo) {
 
 function setPhotoState() {
   let img = document.querySelector(".-active");
-  console.log(img.dataset);
   $(".-active").fadeOut();
   let attribute = img.dataset.img;
   sessionStorage.setItem("photo", attribute);
