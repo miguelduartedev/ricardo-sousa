@@ -554,21 +554,29 @@ body#info {
       background: white;
   }
 
-.info_intro {
-  line-height: 28px;
-}
+  .info_intro {
+    line-height: 28px;
+  }
 
-.info_date {
-  font-size: 16px;
-  line-height: 28px;
-}
+  .info_date {
+    font-size: 16px !important;
+    line-height: 28px !important;
+  }
 
-#menu {
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  letter-spacing: -0.03em;
-}
+  .tg td {
+    padding-top: 0 !important;
+  }
+
+  .th-first {
+    padding-top: 0 !important;
+  }
+
+  #menu {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.03em;
+  }
 
   #description,
   #info_description {
