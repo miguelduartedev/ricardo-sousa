@@ -378,7 +378,7 @@ function mainToReadMe() {
   var resdif = (screen.width / screen.height);
   console.log(resdif);
   if (resdif >= 1.7) {
-    $("#main_section").animate({ marginTop: "-100%" }, { duration: 370, queue: false }).fadeOut("slow");
+    $("#main_section").animate({ marginTop: "-100%" }, { duration: 51000, queue: false }).fadeOut("slow");
   }
   else {
     $("#main_section").animate({ marginTop: "-310%" }, { duration: 300, queue: false }).fadeOut("slow");
