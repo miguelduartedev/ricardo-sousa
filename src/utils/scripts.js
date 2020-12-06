@@ -2,7 +2,31 @@ console.log(
   "Developed by Luís Conceição: https://www.linkedin.com/in/lu%C3%ADs-c-619364108/"
 );
 
+var scrollActive = false;
+
+function pageScroll() {
+  const queryString = window.location.search;
+  if ((queryString.replace("?", "") !== "info")) {
+    if (localStorage.getItem('auto-scroll') !== 'false') {
+      window.scrollBy(0, 1);
+      scrolldelay = setTimeout(pageScroll, 20);
+    }
+  }
+}
+
+pageScroll();
+
+//document.addEventListener("scroll", pageScroll(false));
+
+
 document.addEventListener("DOMContentLoaded", function () {
+
+  /* function pageScroll() {
+    window.scrollBy(0, 1);
+    scrolldelay = setTimeout(pageScroll, 10);
+  }
+  pageScroll(); */
+  /*
   var doc = window.document,
     context = doc.querySelector(".js-loop"),
     clones = context.querySelectorAll(".is-clone"),
@@ -11,41 +35,41 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollPos = 0,
     clonesHeight = 0,
     i = 0;
-
+ 
   function getScrollPos() {
     return (
       (context.pageYOffset || context.scrollTop) - (context.clientTop || 0)
     );
   }
-
+ 
   function setScrollPos(pos) {
     context.scrollTop = pos;
   }
-
+ 
   function getClonesHeight() {
     clonesHeight = 0;
-
+ 
     for (i = 0; i < clones.length; i += 1) {
       clonesHeight = clonesHeight + clones[i].offsetHeight;
     }
-
+ 
     return clonesHeight;
   }
-
+ 
   function reCalc() {
     scrollPos = getScrollPos();
     scrollHeight = context.scrollHeight;
     clonesHeight = getClonesHeight();
-
+ 
     if (scrollPos <= 0) {
       setScrollPos(1); // Scroll 1 pixel to allow upwards scrolling
     }
   }
-
+ 
   function scrollUpdate() {
     if (!disableScroll) {
       scrollPos = getScrollPos();
-
+ 
       if (clonesHeight + scrollPos >= scrollHeight) {
         // Scroll to the top when you’ve reached the bottom
         setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
@@ -56,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         disableScroll = true;
       }
     }
-
+ 
     if (disableScroll) {
       // Disable scroll-jumping for a short time to avoid flickering
       window.setTimeout(function () {
@@ -64,12 +88,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 40);
     }
   }
-
+ 
   function init() {
     reCalc();
     window.requestAnimationFrame(reCalc);
     window.requestAnimationFrame(scrollUpdate);
-
+ 
     context.addEventListener(
       "scroll",
       function () {
@@ -78,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       false
     );
-
+ 
     window.addEventListener(
       "resize",
       function () {
@@ -88,15 +112,20 @@ document.addEventListener("DOMContentLoaded", function () {
       false
     );
   }
-
+ 
   if (document.readyState !== "loading") {
     init();
   } else {
     doc.addEventListener("DOMContentLoaded", init, false);
-  }
+  }*/
 });
 
 $(document).ready(function () {
+  /* function pageScroll() {
+    window.scrollBy(0, 1);
+    scrolldelay = setTimeout(pageScroll, 10);
+  }
+  pageScroll(); */
   const queryString = window.location.search;
   $("body").fadeIn(1000);
 
@@ -110,6 +139,9 @@ $(document).ready(function () {
     $("body").css("overview", "hidden");
     $("#overview").fadeIn("slow");
     randomizeImage();
+    hideLanding(true);
+    localStorage.setItem('auto-scroll', true);
+    pageScroll();
   } else if (queryString.replace("?", "") === "info") {
     $("#side_author, #top_menu, .-active, #footer").css("opacity", "1");
     $(".firstFade").fadeOut("fast");
@@ -118,6 +150,7 @@ $(document).ready(function () {
     $("#author").fadeOut();
     $("#info").fadeIn("fast");
     randomizeImage();
+    hideLanding(true);
   } else {
     // Este mete logo o -active, portanto o outro só corre se este não o adicionar
     var description = document.querySelector("#description");
@@ -140,6 +173,8 @@ $(document).ready(function () {
           $(".imagesLink").fadeIn();
           $("#readme").animate({ marginTop: "0" }, { duration: 100, queue: true }).promise();
           $("#readme").fadeIn('slow').promise();
+          console.log('olaaaaaaa');
+          hideLanding(true);
         } else {
           image.style.opacity = 0.3;
           description.innerHTML = image.dataset.description;
@@ -210,7 +245,7 @@ document.onkeydown = function (event) {
 };
 
 // fades out ricardo sousa layer
-function hideLanding() {
+function hideLanding(bool) {
   $(".landing, #nav_next, #nav_previous").click(function () {
     if ($(".landing").hasClass('-visible')) {
       $(".landing").fadeOut();
@@ -221,8 +256,22 @@ function hideLanding() {
       $("#footer").animate({ opacity: 1 });
       $("#side_author").animate({ opacity: 1 });
       $("#nav_next, #nav_previous").addClass('-operating');
+      $("#nav_next, #nav_previous").css('z-index', 'unset');
     }
   });
+  if (bool) {
+    if ($(".landing").hasClass('-visible')) {
+      $(".landing").fadeOut();
+      $(".landing").removeClass('-visible');
+      $("#author").fadeOut();
+      $("#top_menu").animate({ opacity: 1 });
+      $(".-active").animate({ opacity: 1 });
+      $("#footer").animate({ opacity: 1 });
+      $("#side_author").animate({ opacity: 1 });
+      $("#nav_next, #nav_previous").addClass('-operating');
+      $("#nav_next, #nav_previous").css('z-index', 'unset');
+    }
+  }
 }
 
 // Randomize imagem
@@ -326,17 +375,49 @@ function project_handler(nextImgDOM) {
 function mainToReadMe() {
   $(".firstFade").fadeOut("fast");
   $("#readme").fadeIn("fast").animate({ marginTop: "0" }, { duration: 300, queue: false });
-  $("#main_section").animate({ marginTop: "-300%" }, { duration: 300, queue: false }).fadeOut("slow");
+  var resdif = (screen.width / screen.height);
+  console.log(resdif);
+  if (resdif >= 1.7) {
+    $("#main_section").animate({ marginTop: "-100%" }, { duration: 370, queue: false }).fadeOut("slow");
+  }
+  else {
+    $("#main_section").animate({ marginTop: "-310%" }, { duration: 300, queue: false }).fadeOut("slow");
+  }
+  /*   if (window.innerWidth <= 575.98) {
+      $("#main_section").animate({ marginTop: "-300%" }, { duration: 300, queue: false });
+    } else if (window.innerHeight > window.innerWidth) {
+      $("#main_section").animate({ marginTop: "-300%" }, { duration: 300, queue: false });
+    } else {
+      $("#main_section").animate({ marginTop: "-300%" }, { duration: 800, queue: false });
+    } */
   $(".imagesLink").fadeIn({ duration: 300, queue: false });
 }
 
 function readMeToMain() {
   reset_mobile_nav();
   $(".imagesLink").fadeOut("fast");
+  var resdif = (screen.width / screen.height);
+  console.log(resdif);
+  if (resdif >= 1.7) {
+    $("#readme").animate({ marginTop: "100%" }, { duration: 370, queue: false }).fadeOut("fast");
+  }
+  else {
+    $("#readme").animate({ marginTop: "300%" }, { duration: 300, queue: false }).fadeOut("fast");
+  }
+
+  /*   if (window.innerWidth <= 575.98) {
+      $("#readme").animate({ marginTop: "300%" }, { duration: 300, queue: false }).fadeOut("fast");
+    } else if (window.innerHeight > window.innerWidth) {
+      $("#readme").animate({ marginTop: "300%" }, { duration: 300, queue: false }).fadeOut("fast");
+    }
+    else {
+      $("#readme").animate({ marginTop: "300%" }, { duration: 800, queue: false }).fadeOut("fast");
+    } */
   $("#main_section").fadeIn("fast").animate({ marginTop: "0" }, { duration: 300, queue: false });
-  $("#readme").animate({ marginTop: "500%" }, { duration: 300, queue: false }).fadeOut("fast");
   $(".firstFade").fadeIn("fast");
   $("#footer").animate({ opacity: 1 });
+  hideLanding(true);
+  $("#nav_next, #nav_previous").css('z-index', 'unset');
 }
 
 function mainToInfo() {
@@ -367,8 +448,18 @@ function mainToOverview() {
   $("body").css("overview", "hidden");
   $("#overview").fadeIn("slow");
   let image = document.querySelector(".-active").dataset.img;
-  document.getElementById(image).scrollIntoView();
+  // Scroll to the previous image so the desired image doesn't show at the top
+  let anchorIMG = ('img-' + ((parseInt(image.split("-")[1]) - 1)).toString());
+  let imgHandler = anchorIMG === 'img-0' ? 'img-1' : anchorIMG;
   refreshParams("overview");
+  document.getElementById(imgHandler).scrollIntoView();
+  localStorage.setItem('auto-scroll', true);
+  pageScroll();
+  /* function pageScroll() {
+    window.scrollBy(0, 1);
+    scrolldelay = setTimeout(pageScroll, 10);
+  }
+  pageScroll(); */
 }
 
 function overviewToMain() {
@@ -382,11 +473,12 @@ function overviewToMain() {
   refreshParams(document.querySelector(".-active").dataset.url);
   let currentImg = document.querySelector(".-active");
   document.querySelector("#info_bg").src = currentImg.src;
+  localStorage.setItem('auto-scroll', false);
 }
 
 function reset_mobile_nav() {
   let nav = document.getElementById("mobile_nav");
-  if (window.innerWidth <= 767.98) {
+  if (window.innerWidth <= 575.98) {
     nav.setAttribute("data-state", "close");
     mobile_nav();
   }

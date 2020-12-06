@@ -174,7 +174,7 @@ a:hover {
   z-index: -1;
   position: -webkit-sticky;
   position: fixed;
-  top: 15%;
+  top: 20%;
   display: block;
   left: 0;
   right: 0;
@@ -183,7 +183,8 @@ a:hover {
   opacity: 0.3;
   align-self: center;
   margin: 0 auto;
-  height: 70vh;
+  max-height: 70vh;
+  max-width: 90vw;
 }
 
 @media (max-width: 1366px) {
@@ -232,14 +233,16 @@ img.overview {
 }
 } */
 
+/* METE 170PX SE QUISEREM O SCROLL AUTOMATICO */
 .row_spacing {
-  margin: 170px 0 150px 0;
+  margin: 150px 0 150px 0;
   max-width: 100%;
 }
 
-.rowPadding {
+/* TIRA ISTO SE QUISEREM O SCROLL */
+/* .rowPadding {
   padding-top: 30px;
-}
+} */
 
 @media only screen 
   and (min-device-width: 768px) 
@@ -251,25 +254,28 @@ img.overview {
     }
 }
 
-@media (max-width: 767.98px) {
-  #info .center {
-    text-align: unset !important;
-    margin: unset !important;
-  }
-.row_spacing {
-  margin: 130px 0 90px 0;
-}
-.rowPadding {
-  padding-top: 50px;
-}
-  img.overview {
-    max-width: 285px !important;
-    height: 180px !important;
-  }
+@media (max-width: 1000px) {
   #info .left {
     margin-bottom: 5px !important;
     float: unset !important;
     position: unset !important;
+  }
+  #info .center {
+    text-align: unset !important;
+    margin: unset !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .row_spacing {
+    margin: 130px 0 90px 0;
+  }
+  .rowPadding {
+    padding-top: 50px;
+  }
+  img.overview {
+    max-width: 285px !important;
+    height: 180px !important;
   }
 }
 
@@ -286,8 +292,8 @@ img.overview {
 }
 
 html {
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow: unset;
+  overflow-x: unset;
 }
 
 ::-webkit-scrollbar {
@@ -302,20 +308,26 @@ html {
 html,
 body#overview {
   height: 100%;
-  overflow: hidden;
+  overflow: unset;
+}
+
+#overview .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #overview {
   height: 100%;
-  overflow: hidden;
+  overflow: unset;
 }
 
+/* TIRA ISTO SE QUISEREM O SCROLL AUTOMATICO */
 .Loop {
   position: relative;
   height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
+  /*overflow-y: auto;
+   overflow-x: hidden; 
+  -webkit-overflow-scrolling: touch;*/
 }
 
 section {
@@ -345,6 +357,9 @@ body#info {
   overflow: unset;
 }
 
+#info {
+  overflow: hidden;
+}
 
 #info #main_section {
   z-index: 9999;
