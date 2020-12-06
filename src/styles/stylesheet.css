@@ -357,10 +357,6 @@ body#info {
   overflow: unset;
 }
 
-#info {
-  overflow: hidden;
-}
-
 #info #main_section {
   z-index: 9999;
   position: absolute;
@@ -550,8 +546,9 @@ body#info {
     line-height: 20px;
   }
 
-  #top_menu {
+  #info #top_menu {
     font-size: 16px;
+    position: -webkit-sticky;
     position: sticky;
       top: 0;
       background: white;
