@@ -75,6 +75,7 @@ a:hover {
   align-self: center;
   margin: 0 auto;
   max-height: 70vh;
+  max-width: 90vw;
   transition: max-height 0.25s ease-in;
   display: none;
 }
@@ -191,18 +192,10 @@ a:hover {
   }
 }
 
-@media (max-width: 1280px) {
-  .wide {
-  max-height: 50vh;
-  } 
-}
-
 @media (max-width: 900px) {
   .photography {
     max-height: 50vh;
-  }
-  .wide {
-    max-height: 30vh;
+    max-width: 80vw;
   }
 }
 
