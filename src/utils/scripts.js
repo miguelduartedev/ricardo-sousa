@@ -173,7 +173,7 @@ $(document).ready(function () {
           $(".imagesLink").fadeIn();
           $("#readme").animate({ marginTop: "0" }, { duration: 100, queue: true }).promise();
           $("#readme").fadeIn('slow').promise();
-          console.log('olaaaaaaa');
+          localStorage.setItem('auto-scroll', false);
           hideLanding(true);
         } else {
           image.style.opacity = 0.3;
