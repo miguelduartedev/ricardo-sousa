@@ -445,38 +445,37 @@ function infoToMain() {
 }
 
 function mainToOverview() {
-  sessionStorage.setItem(
-    "photo",
-    document.querySelector(".-active").dataset.img
-  );
-  $(".firstFade").fadeOut("fast");
-  $("#main_section").fadeOut("fast");
-  $("body").css("height", "100%");
-  $("body").css("overview", "hidden");
-  $("#overview").fadeIn("slow");
+  let activeIMG = document.querySelector(".-active");
+  document.querySelector("#first_img").src = activeIMG.src;
+  document.querySelector("#first_img").setAttribute("data-img", activeIMG.dataset.img);
+  document.getElementById(activeIMG.dataset.img).classList.add("-hidden");
+  sessionStorage.setItem("photo", activeIMG.dataset.img);
+  $("#main_section").fadeOut("normal");
+  $(".firstFade").fadeOut("normal");
+  setTimeout(function () {
+    $("body").css("height", "100%");
+    $("body").css("overview", "hidden");
+    $("#overview").fadeIn("slow");
+    document.getElementById('img-1').scrollIntoView();
+    localStorage.setItem('auto-scroll', true);
+    pageScroll();
+  }, 400);
   let image = document.querySelector(".-active").dataset.img;
   // Scroll to the previous image so the desired image doesn't show at the top
   let anchorIMG = ('img-' + ((parseInt(image.split("-")[1]) - 1)).toString());
   let imgHandler = anchorIMG === 'img-0' ? 'img-1' : anchorIMG;
   refreshParams("overview");
-  document.getElementById(imgHandler).scrollIntoView();
-  localStorage.setItem('auto-scroll', true);
-  pageScroll();
-  /* function pageScroll() {
-    window.scrollBy(0, 1);
-    scrolldelay = setTimeout(pageScroll, 10);
-  }
-  pageScroll(); */
 }
 
 function overviewToMain() {
+  document.querySelector(".-hidden").classList.remove("-hidden");
   reset_mobile_nav();
   let body = document.querySelector("body");
   body.style.height = "unset";
   body.style.overflow = "unset";
-  $("#overview").fadeOut("fast");
-  $("#main_section").fadeIn("fast");
-  $(".firstFade").fadeIn("fast");
+  $("#overview").fadeOut({ queue: true, duration: 10 });
+  $("#main_section").fadeIn({ queue: true, duration: 400 });
+  $(".firstFade").fadeIn("slow");
   refreshParams(document.querySelector(".-active").dataset.url);
   let currentImg = document.querySelector(".-active");
   document.querySelector("#info_bg").src = currentImg.src;
