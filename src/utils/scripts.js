@@ -158,6 +158,13 @@ $(document).ready(function () {
       if (image.dataset.url === queryString.replace("?", "")) {
         if (window.location.hash === '#readme') {
           document.getElementById('readme').style.marginTop = '0';
+          var resdif = (screen.width / screen.height);
+          if (resdif >= 1.6) {
+            document.getElementById('main_section').style.marginTop = '-100%';
+          }
+          else {
+            document.getElementById('main_section').style.marginTop = '310%';
+          }
           image.classList.add("-active");
           textHandler();
           $("#side_author, #top_menu, .-active").css("opacity", "1");
@@ -374,14 +381,14 @@ function project_handler(nextImgDOM) {
 
 function mainToReadMe() {
   $(".firstFade").fadeOut("fast");
-  $("#readme").fadeIn("fast").animate({ marginTop: "0" }, { duration: 300, queue: false });
+  $("#readme").fadeIn(25).animate({ marginTop: "0" }, { duration: 300, queue: false });
   var resdif = (screen.width / screen.height);
   console.log(resdif);
-  if (resdif >= 1.7) {
-    $("#main_section").animate({ marginTop: "-100%" }, { duration: 51000, queue: false }).fadeOut("slow");
+  if (resdif >= 1.6) {
+    $("#main_section").animate({ marginTop: "-100%" }, { duration: 380, queue: false }).fadeOut(800);
   }
   else {
-    $("#main_section").animate({ marginTop: "-310%" }, { duration: 300, queue: false }).fadeOut("slow");
+    $("#main_section").animate({ marginTop: "-310%" }, { duration: 300, queue: false }).fadeOut(800);
   }
   /*   if (window.innerWidth <= 575.98) {
       $("#main_section").animate({ marginTop: "-300%" }, { duration: 300, queue: false });
@@ -398,11 +405,11 @@ function readMeToMain() {
   $(".imagesLink").fadeOut("fast");
   var resdif = (screen.width / screen.height);
   console.log(resdif);
-  if (resdif >= 1.7) {
-    $("#readme").animate({ marginTop: "100%" }, { duration: 370, queue: false }).fadeOut("fast");
+  if (resdif >= 1.6) {
+    $("#readme").animate({ marginTop: "100%" }, { duration: 380, queue: false }).fadeOut(800);
   }
   else {
-    $("#readme").animate({ marginTop: "300%" }, { duration: 300, queue: false }).fadeOut("fast");
+    $("#readme").animate({ marginTop: "300%" }, { duration: 300, queue: false }).fadeOut(800);
   }
 
   /*   if (window.innerWidth <= 575.98) {
@@ -413,7 +420,7 @@ function readMeToMain() {
     else {
       $("#readme").animate({ marginTop: "300%" }, { duration: 800, queue: false }).fadeOut("fast");
     } */
-  $("#main_section").fadeIn("fast").animate({ marginTop: "0" }, { duration: 300, queue: false });
+  $("#main_section").fadeIn(25).animate({ marginTop: "0" }, { duration: 300, queue: false });
   $(".firstFade").fadeIn("fast");
   $("#footer").animate({ opacity: 1 });
   hideLanding(true);
