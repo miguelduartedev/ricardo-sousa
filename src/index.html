@@ -29,7 +29,7 @@
   </div>
 
   <div id="main_section" style="z-index: -1;position: absolute;top: 0;left: 0;right: 0;bottom: 0;">
-    <div class="container w-100" id="top_menu" style="opacity: 0.3;max-width: 100%;position:fixed;z-index: 9999;">
+    <div class="gallery_menu container w-100" id="top_menu" style="opacity: 0.3;max-width: 100%;position:fixed;z-index: 9999;">
       <div class="row">
         <div class="col-sm-12">
           <div onclick="mobile_nav()">
@@ -49,7 +49,7 @@
           style="padding: 0;width: 50%;height: 100%;position: fixed;left: 0;z-index:9999">
 
         </div>
-        <div class="col-sm" style="
+        <div id="gallery" class="col-sm" style="
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -131,10 +131,8 @@
   <!-- INFO SECTION -->
 
   <div id="info" style="display: none;">
-
-    <img id="info_bg">
       <div id="">
-        <div class="container w-100" id="top_menu">
+        <div class="info_menu container w-100" id="top_menu">
           <div class="row">
             <div class="col-sm-12">
               <p id="back"><a onclick="infoToMain()" style="text-decoration: none;color:black;">BACK</a>
@@ -327,7 +325,7 @@
 
         <main id="pls" class="Loop js-loop">
           <div id="main_section" style="z-index: 9999;position: absolute;top: 0;left: 0;right: 0;bottom: 0;">
-            <div class="container w-100" id="top_menu" style="max-width: 100%;position:fixed;z-index: 500;">
+            <div class="overview_menu container w-100" id="top_menu" style="max-width: 100%;position:fixed;z-index: 500;">
               <div class="row">
                 <div class="col-sm-12">
                   <p id="back"><a onclick="overviewToMain()">BACK</a> </p>
@@ -347,7 +345,7 @@
               </div>
             </section>
 
-            <section class="is-clone row_spacing rowPadding" id="img-X">
+            <section class="is-clone row_spacing rowPadding -hidden" id="img-X">
               <div class="row">
                 <div class="col-12 col-md-6 nopadding" style="text-align: center;">
                   <a onclick="overviewToMain()">

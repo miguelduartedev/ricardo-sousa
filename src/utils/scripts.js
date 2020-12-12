@@ -229,7 +229,7 @@ $(document).ready(function () {
     document.querySelector('.left').innerHTML = document.querySelector('.left').innerHTML.replace(',', '');
   }
   let currentImg = document.querySelector(".-active");
-  document.querySelector("#info_bg").src = currentImg.src;
+  //document.querySelector("#info_bg").src = currentImg.src;
 });
 
 document.onkeydown = function (event) {
@@ -362,7 +362,7 @@ function navigation(direction) {
       }
     }
     let currentImg = document.querySelector(".-active");
-    document.querySelector("#info_bg").src = currentImg.src;
+    //document.querySelector("#info_bg").src = currentImg.src;
   }
 }
 
@@ -429,7 +429,9 @@ function readMeToMain() {
 
 function mainToInfo() {
   $(".firstFade").fadeOut("fast");
-  $("#main_section").fadeOut("fast");
+  //$("#main_section").fadeOut("fast");
+  $(".gallery_menu, #nav_previous, #nav_next").fadeOut("fast");
+  $(".-active").addClass("-infoBG");
   $("#info").fadeIn("fast");
   refreshParams("info");
 }
@@ -438,7 +440,9 @@ function infoToMain() {
   reset_mobile_nav();
   $("#info").fadeOut("fast");
   $("#main_section").fadeIn("fast");
+  $("#footer, .gallery_menu, #nav_previous, #nav_next").fadeIn("fast");
   $(".firstFade").fadeIn("fast");
+  $(".-active").removeClass("-infoBG");
   let currentImg = document.querySelector(".-active");
   document.querySelector("#description").innerHTML = currentImg.dataset.description;
   refreshParams(document.querySelector(".-active").dataset.url);
@@ -473,12 +477,12 @@ function overviewToMain() {
   let body = document.querySelector("body");
   body.style.height = "unset";
   body.style.overflow = "unset";
-  $("#overview").fadeOut({ queue: true, duration: 10 });
+  $("#overview").fadeOut({ queue: true, duration: 5 });
   $("#main_section").fadeIn({ queue: true, duration: 400 });
   $(".firstFade").fadeIn("slow");
   refreshParams(document.querySelector(".-active").dataset.url);
   let currentImg = document.querySelector(".-active");
-  document.querySelector("#info_bg").src = currentImg.src;
+  //document.querySelector("#info_bg").src = currentImg.src;
   localStorage.setItem('auto-scroll', false);
 }
 

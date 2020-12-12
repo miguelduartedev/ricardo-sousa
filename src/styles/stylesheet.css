@@ -82,6 +82,7 @@ a:hover {
 
 .-active {
   display: unset;
+  transition: opacity 200ms;
 }
 
 #nav_next.-operating {
@@ -170,7 +171,7 @@ a:hover {
   display: none;
 }
 
-#info_bg {
+/* #info_bg {
   z-index: -1;
   position: -webkit-sticky;
   position: fixed;
@@ -185,7 +186,7 @@ a:hover {
   margin: 0 auto;
   max-height: 70vh;
   max-width: 90vw;
-}
+} */
 
 @media (max-width: 1366px) {
   #image {
@@ -590,14 +591,6 @@ body#info {
     max-height: 420px;
   }
 
-  #info_bg {
-    position: fixed;
-    top: 50%;
-    left: 50%; 
-
-    transform: translate(-50%, -50%);
-  }
-
   #side_author {
     text-align: center;
     width: 100%;
@@ -811,4 +804,17 @@ body#info {
 
 .-hidden {
   display: none;
+}
+
+.-infoBG {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3 !important;
+  transition: opacity 200ms;
+}
+
+#info {
+  overflow: hidden;
 }
