@@ -2,19 +2,34 @@ console.log(
   "Developed by Luís Conceição: https://www.linkedin.com/in/lu%C3%ADs-c-619364108/"
 );
 
+var lastScrollTop = 0;
+
+// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+window.addEventListener("scroll", function () { // or window.addEventListener("scroll"....
+  var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+  if (st > lastScrollTop) {
+    console.log('down');
+    pageScroll(2);
+  } else {
+    console.log('up');
+    pageScroll(-2);
+  }
+  lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
+
 var scrollActive = false;
 
-function pageScroll() {
+function pageScroll(direction) {
   const queryString = window.location.search;
   if ((queryString.replace("?", "") !== "info")) {
     if (localStorage.getItem('auto-scroll') !== 'false') {
-      window.scrollBy(0, 1);
+      window.scrollBy(0, direction);
       scrolldelay = setTimeout(pageScroll, 20);
     }
   }
 }
 
-pageScroll();
+pageScroll(2);
 
 //document.addEventListener("scroll", pageScroll(false));
 
@@ -141,7 +156,7 @@ $(document).ready(function () {
     randomizeImage();
     hideLanding(true);
     localStorage.setItem('auto-scroll', true);
-    pageScroll();
+    pageScroll(2);
   } else if (queryString.replace("?", "") === "info") {
     $("#side_author, #top_menu, .-active, #footer").css("opacity", "1");
     $(".firstFade").fadeOut("fast");
@@ -390,13 +405,6 @@ function mainToReadMe() {
   else {
     $("#main_section").animate({ marginTop: "-310%" }, { duration: 300, queue: false }).fadeOut(800);
   }
-  /*   if (window.innerWidth <= 575.98) {
-      $("#main_section").animate({ marginTop: "-300%" }, { duration: 300, queue: false });
-    } else if (window.innerHeight > window.innerWidth) {
-      $("#main_section").animate({ marginTop: "-300%" }, { duration: 300, queue: false });
-    } else {
-      $("#main_section").animate({ marginTop: "-300%" }, { duration: 800, queue: false });
-    } */
   $(".imagesLink").fadeIn({ duration: 300, queue: false });
 }
 
@@ -411,16 +419,7 @@ function readMeToMain() {
   else {
     $("#readme").animate({ marginTop: "300%" }, { duration: 300, queue: false }).fadeOut(800);
   }
-
-  /*   if (window.innerWidth <= 575.98) {
-      $("#readme").animate({ marginTop: "300%" }, { duration: 300, queue: false }).fadeOut("fast");
-    } else if (window.innerHeight > window.innerWidth) {
-      $("#readme").animate({ marginTop: "300%" }, { duration: 300, queue: false }).fadeOut("fast");
-    }
-    else {
-      $("#readme").animate({ marginTop: "300%" }, { duration: 800, queue: false }).fadeOut("fast");
-    } */
-  $("#main_section").fadeIn(25).animate({ marginTop: "0" }, { duration: 300, queue: false });
+  $("#main_section").fadeIn(25).animate({ marginTop: "0" }, { duration: 380, queue: false });
   $(".firstFade").fadeIn("fast");
   $("#footer").animate({ opacity: 1 });
   hideLanding(true);
@@ -429,7 +428,6 @@ function readMeToMain() {
 
 function mainToInfo() {
   $(".firstFade").fadeOut("fast");
-  //$("#main_section").fadeOut("fast");
   $(".gallery_menu, #nav_previous, #nav_next").fadeOut("fast");
   $(".-active").addClass("-infoBG");
   $("#info").fadeIn("fast");
@@ -460,13 +458,14 @@ function mainToOverview() {
     $("body").css("height", "100%");
     $("body").css("overview", "hidden");
     $("#overview").fadeIn("slow");
-    document.getElementById('img-1').scrollIntoView();
+    document.getElementById('img-X').scrollIntoView();
     localStorage.setItem('auto-scroll', true);
-    pageScroll();
+    pageScroll(2);
   }, 400);
   let image = document.querySelector(".-active").dataset.img;
   // Scroll to the previous image so the desired image doesn't show at the top
   let anchorIMG = ('img-' + ((parseInt(image.split("-")[1]) - 1)).toString());
+  console.log(anchorIMG);
   let imgHandler = anchorIMG === 'img-0' ? 'img-1' : anchorIMG;
   refreshParams("overview");
 }

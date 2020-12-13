@@ -818,3 +818,11 @@ body#info {
 #info {
   overflow: hidden;
 }
+
+#img-X {
+  padding-top: 100px;
+}
+
+.last_overview_image {
+  padding-bottom: 100px;
+}
