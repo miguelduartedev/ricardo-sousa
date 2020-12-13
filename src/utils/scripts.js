@@ -451,6 +451,7 @@ function mainToOverview() {
   document.querySelector("#first_img").src = activeIMG.src;
   document.querySelector("#first_img").setAttribute("data-img", activeIMG.dataset.img);
   document.getElementById(activeIMG.dataset.img).classList.add("-hidden");
+  document.getElementById('img-X').classList.remove("-hidden");
   sessionStorage.setItem("photo", activeIMG.dataset.img);
   $("#main_section").fadeOut("normal");
   $(".firstFade").fadeOut("normal");
