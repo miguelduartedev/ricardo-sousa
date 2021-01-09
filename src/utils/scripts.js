@@ -4,15 +4,16 @@ console.log(
 
 var lastScrollTop = 0;
 
+// Scroll Direction Detector
 // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-window.addEventListener("scroll", function () { // or window.addEventListener("scroll"....
-  var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+window.addEventListener("scroll", function () {
+  var st = window.pageYOffset || document.documentElement.scrollTop;
   if (st > lastScrollTop) {
     console.log('down');
-    pageScroll(2);
+    pageScroll(1);
   } else {
     console.log('up');
-    pageScroll(-2);
+    pageScroll(-1);
   }
   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
@@ -29,7 +30,7 @@ function pageScroll(direction) {
   }
 }
 
-pageScroll(2);
+pageScroll(1);
 
 //document.addEventListener("scroll", pageScroll(false));
 
@@ -156,7 +157,7 @@ $(document).ready(function () {
     randomizeImage();
     hideLanding(true);
     localStorage.setItem('auto-scroll', true);
-    pageScroll(2);
+    pageScroll(1);
   } else if (queryString.replace("?", "") === "info") {
     $("#side_author, #top_menu, .-active, #footer").css("opacity", "1");
     $(".firstFade").fadeOut("fast");
@@ -245,24 +246,29 @@ $(document).ready(function () {
   }
   let currentImg = document.querySelector(".-active");
   //document.querySelector("#info_bg").src = currentImg.src;
+
+  // Disable user from bring able to download images
+  $("img").on("contextmenu", function () {
+    return false;
+  });
 });
 
+// Change image on arrow key press
 document.onkeydown = function (event) {
-  switch (event.keyCode) {
-    case 37:
-      if (document.getElementById("author").style.display === "none") {
+  let queryString = window.location.search;
+  if (document.getElementById("author").style.display === "none" && queryString.replace("?", "") !== "info") {
+    switch (event.keyCode) {
+      case 37:
         navigation("previous");
-      }
-      break;
-    case 38:
-      break;
-    case 39:
-      if (document.getElementById("author").style.display === "none") {
+        break;
+      case 38:
+        break;
+      case 39:
         navigation("next");
-      }
-      break;
-    case 40:
-      break;
+        break;
+      case 40:
+        break;
+    }
   }
 };
 
@@ -447,6 +453,7 @@ function infoToMain() {
 }
 
 function mainToOverview() {
+  document.getElementById('menu').classList.add('loading');
   let activeIMG = document.querySelector(".-active");
   document.querySelector("#first_img").src = activeIMG.src;
   document.querySelector("#first_img").setAttribute("data-img", activeIMG.dataset.img);
@@ -461,12 +468,11 @@ function mainToOverview() {
     $("#overview").fadeIn("slow");
     document.getElementById('img-X').scrollIntoView();
     localStorage.setItem('auto-scroll', true);
-    pageScroll(2);
+    pageScroll(1);
   }, 400);
   let image = document.querySelector(".-active").dataset.img;
   // Scroll to the previous image so the desired image doesn't show at the top
   let anchorIMG = ('img-' + ((parseInt(image.split("-")[1]) - 1)).toString());
-  console.log(anchorIMG);
   let imgHandler = anchorIMG === 'img-0' ? 'img-1' : anchorIMG;
   refreshParams("overview");
 }
@@ -484,6 +490,7 @@ function overviewToMain() {
   let currentImg = document.querySelector(".-active");
   //document.querySelector("#info_bg").src = currentImg.src;
   localStorage.setItem('auto-scroll', false);
+  document.getElementById('menu').classList.remove('loading');
 }
 
 function reset_mobile_nav() {

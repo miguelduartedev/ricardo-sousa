@@ -16,7 +16,7 @@ a:hover {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   text-align: center;
   letter-spacing: -0.03em;
@@ -106,7 +106,7 @@ a:hover {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   /* identical to box height, or 123% */
 
@@ -126,7 +126,7 @@ a:hover {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   /* identical to box height, or 123% */
 
@@ -157,7 +157,7 @@ a:hover {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   /* identical to box height, or 123% */
 
@@ -425,7 +425,7 @@ body#info {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   /* or 123% */
   margin: 0 auto;
@@ -467,7 +467,7 @@ body#info {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   letter-spacing: -0.03em;
   color: #000000;
@@ -490,7 +490,7 @@ body#info {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   /* or 123% */
 
@@ -503,7 +503,7 @@ body#info {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   /* or 123% */
 
@@ -517,7 +517,7 @@ body#info {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   /* identical to box height, or 123% */
 
@@ -825,4 +825,8 @@ body#info {
 
 .last_overview_image {
   padding-bottom: 100px;
+}
+
+.loading {
+    pointer-events: none; 
 }
