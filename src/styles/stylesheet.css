@@ -538,7 +538,16 @@ body#info {
   float: left;
 }
 
+#readme {
+  display: none;
+  margin-top: 100%;
+}
+
 @media (max-width: 575.98px) {
+  #readme {
+    margin-top: 300%;
+  }
+
   .left_anchor:last-of-type{
     display: block;
   }
@@ -746,8 +755,7 @@ body#info {
     bottom: unset;
     left: unset;
     text-align: center;
-    position: -webkit-sticky;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     background: white;
     height: 70px;
@@ -780,6 +788,7 @@ body#info {
     letter-spacing: -0.03em;
 
     color: #000000;
+    margin-bottom: 70px;
   }
 
   #readme #readme_title {

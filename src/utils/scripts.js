@@ -168,6 +168,7 @@ $(document).ready(function () {
     randomizeImage();
     hideLanding(true);
   } else {
+    // Location: Gallery
     // Este mete logo o -active, portanto o outro só corre se este não o adicionar
     var description = document.querySelector("#description");
     document.querySelectorAll(".photography").forEach(image => {
@@ -235,13 +236,14 @@ $(document).ready(function () {
         hideLanding();
       }
     }
+    if (window.innerWidth <= 575.98) {
+      $('html').css('touch-action', "none");
+    }
   }
   if (window.innerWidth <= 575.98) {
     if ($('#counter').css('visibility') == 'hidden') {
       $('#description').css('margin-bottom', "-20px");
     }
-  }
-  if (window.innerWidth <= 575.98) {
     document.querySelector('.left').innerHTML = document.querySelector('.left').innerHTML.replace(',', '');
   }
   let currentImg = document.querySelector(".-active");
