@@ -486,7 +486,7 @@ body#info {
   margin-bottom: 20px;
 }
 
-#readme #readme_description {
+#readme .readme_description {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
@@ -499,7 +499,7 @@ body#info {
   color: #000000;
 }
 
-#readme #readme_title {
+#readme .readme_title {
   font-family: Neue Haas Grotesk Text Pro;
   font-style: normal;
   font-weight: normal;
@@ -777,7 +777,7 @@ body#info {
     color: #000000;
   }
 
-  #readme #readme_description {
+  #readme .readme_description {
     font-family: Neue Haas Grotesk Text Pro;
     font-style: normal;
     font-weight: normal;
@@ -791,7 +791,7 @@ body#info {
     margin-bottom: 70px;
   }
 
-  #readme #readme_title {
+  #readme .readme_title {
     font-family: Neue Haas Grotesk Text Pro;
     font-style: normal;
     font-weight: normal;
@@ -837,5 +837,9 @@ body#info {
 }
 
 .loading {
-    pointer-events: none; 
+  pointer-events: none; 
+}
+
+#readme_title_2, #readme_description_2 {
+  display: none;
 }

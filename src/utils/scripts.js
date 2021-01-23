@@ -572,10 +572,18 @@ function restartSession() {
 
 function textHandler() {
   let project = document.querySelector(".-active").dataset.projectname;
-  document.getElementById("readme_title").innerHTML =
-    readme_handler[project]["header"];
-  document.getElementById("readme_description").innerHTML =
-    readme_handler[project]["description"];
+  document.getElementById("readme_title").innerHTML = readme_handler[project]["header"];
+  document.getElementById("readme_description").innerHTML = readme_handler[project]["description"];
+  console.log('oi manel? 2');
+  if ('header_2' in readme_handler[project]) {
+    console.log('oi manel?');
+    let second_title = document.getElementById("readme_title_2"),
+      second_description = document.getElementById("readme_description_2");
+    second_title.innerHTML = readme_handler[project]["header_2"];
+    second_description.innerHTML = readme_handler[project]["description_2"];
+    second_title.style.display = 'block';
+    second_description.style.display = 'block';
+  }
 }
 
 const heavy_water_header = "Heavy Water <br> Ricardo Sousa";
@@ -587,56 +595,93 @@ After two years of development Ensaio 304 is a commercially available faucet, wr
 const silent_gestures_header =
   "Silent gestures <br> Ricardo Sousa and André Duarte";
 
-const silent_gestures_description = `Silent gestures started with an uncompromised observation of objects from different
-time periods acrossthe
-portuguese cultural chain from continental Portugal to its colonies at the Lisbon’s Museum of Ethnology. The
-intent was simple yet quite complex, to understand what objects stopped being produced over time, understand
-why and if possible present a contemporary perspective that could bring them back in a way that the
-contemporary market narratives could embrace them based on the aesthetic, ethic and cultural values.
-<br /><br />
+const silent_gestures_header_2 =
+  "Óleos, cheiros e objetos que não querem ser humildes <br> Filomena Silvano";
 
-During that process the we understood the time specific values of the objects and because of that, bringing
-them back based on a revival whim would not create value. However, the traditional techniques weakened with
-time could bring intrinsic cultural knowledge back, and by exposing them in a raw yet very eclectic manner
-they could be broadly understood and deeply appreciated.<br /><br />
+const silent_gestures_description = `Silent Gestures started with an uncompromised observation of objects from different time periods across
+the Portuguese cultural chain from continental Portugal to its colonies at the
+Lisbon’s Museum of Ethnology. The intent was simple yet quite complex, to note which objects stopped
+being produced over time, understand why and if possible present a contemporary perspective we
+brought them back with an unapologetically perspective in a way that the current market narratives
+could embrace them based on the aesthetic, ethic and cultural values.<br/><br/>
 
-We were immensely attracted by the burners and amulets, objects with ritualistic connotations, some of them
-very intimate and personal. This was the turning point, the time where typology and technique collided and the
-idea was born. We took fragrance diffusers as a mean to glorify traditional linen, the chosen material due to
-its ability to hold liquids yet allowing them to breath.<br /><br />
+During that process we understood the time specific values of the objects and because of that, bringing
+them back based on a revival whim would not create value. However, the traditional techniques
+weakened with time could bring intrinsic cultural knowledge back, and by exposing them in a raw yet
+very eclectic manner they could be broadly understood and deeply appreciated.<br/><br/>
 
-The design process was headed to the conception of sculptural volumes, each one resembling an hyperbolic
-spatial expansion due to its scale, not due to a necessity or the need to achieve an evolved version but
-rather to present a contemporary perspective on their aesthetic, meaning as objects, an evaluation for the use
-of traditional materials and techniques in the contemporary context, and ultimately the role of design as an
-agent for the creation of matter in a world where immateriality seems to be the ultimate vanishing
-point.<br /><br />
+We were immensely attracted by the burners and amulets, objects with ritualistic connotations, some of
+them very intimate and personal. This was the turning point, the time where typology and technique
+collided and the idea was born. We took fragrance diffusers as a mean to glorify traditional linen, the
+chosen material due to its ability to hold liquids yet allowing them to breath.<br/><br/>
 
-&nbsp; &nbsp; Who strive - you don’t know how the others strive <br>
-&nbsp; &nbsp; To paint a little thing like that you smeared<br>
-&nbsp; &nbsp; Carelessly passing with your robes afloat,<br>
-&nbsp; &nbsp; Yet do much less, so much less, Someone says,<br>
-&nbsp; &nbsp; (I know his name, no matter) - so much less!<br>
-&nbsp; &nbsp; Well, less is more (...)<br /><br />
+The design process was headed to the conception of sculptural volumes, each one resembling an
+hyperbolic spatial expansion due to its scale, not due to a necessity or the need to achieve an evolved
+version but rather to present a contemporary perspective on their aesthetic, meaning as objects, an
+evaluation for the use of traditional materials and techniques in the contemporary context, and ultimately
+the role of design as an agent for the creation of matter in a world where immateriality seems to be the
+ultimate vanishing point.<br/><br/>
+
+&nbsp; &nbsp; Who strive - you don’t know how the others strive <br/>
+&nbsp; &nbsp; To paint a little thing like that you smeared <br/>
+&nbsp; &nbsp; Carelessly passing with your robes afloat, <br/>
+&nbsp; &nbsp; Yet do much less, so much less, Someone says, <br/>
+&nbsp; &nbsp; (I know his name, no matter) - so much less! <br/>
+&nbsp; &nbsp; Well, less is more (…) <br/><br/>
 
 In the poem entitled Andrea del Sarto, written in 1855 by Robert Browning we can read the so acclaimed
 expression Less is More. This collection does not intend to create a better version of the objects per se,
+and because of that it does deviate from the traditional academical approach to design. However, If
+design is intention (Flusser 1993) we may comfortably assert that an object can also be a medium for a
+message. And that’s what we intended with each piece, something explicit in the way we made all the
+components visible, exposing the mechanism of each part and the symbiotic relations between them
+and the object as a whole. <br/><br/>
 
-and because of that it does deviate from the traditional academical approach to design. However, if design
+In the Diffuser 2 specifically, theres is a process deconstruction by showing
+the four wires of traditional linen yarn individually before they become into a cord conformed by a
+traditional Portuguese technique called bilros. Records of structure exposure are also clear in Diffuser 1
+and Estrutura Vertical. <br/><br/>
 
-is intention (Flusser 1993) we may comfortably assert that an object can also be a medium for a message. And
-that’s what we intended with each piece, something explicit in the way we made all the components visible,
-exposing the mechanism of each part and the symbiotic relations between them and the object 
-as a
-whole.<br /><br />
+Silent Gestures plays with time, culture, and with the notion of slow design, and quoting Nassim Taleb it
+is far of aiming to be perfect. It aims to be antifragile. <br/><br/>`;
 
-In the Diffuser 2 specifically, theres is a process deconstruction by showing the four wires of traditional
-linen yarn individually before they become into a cord made from a traditional portuguese technique called
-bilros. Records of structure exposition are also clear in Diffuser 1 and Estrutura Vertical.<br /><br />
+const silent_gestures_description_2 = `O trabalho que precede, desde tempos ancestrais, a existência de uma tela de linho, resulta de uma
+sinergia entre os gestos, os instrumentos e a matéria, que se concretiza em itinerários (linhas) e ritmos
+únicos, encontrados pelos corpos dos artífices. Esta é uma das lógicas do fazer. Normalmente atribuída
+às práticas artesanais, difere radicalmente daquela que parte de uma arquitetónica das formas “puras”,
+quase sempre desenhadas e concebidas antes da execução dos objetos (Tim Ingold). <br/><br/>
 
-In the Diffuser 2 specifically, theres is a process deconstruction by showing the four wires of traditional
-linen yarn individually before they become into a cord made from a traditional portuguese technique called
-bilros. Records of structure exposition are also clear in Diffuser 1 and Estrutura Vertical.`;
+A primeira vive em empatia com a matéria enquanto a segunda, se possível fosse, prescindiria dos seus
+constrangimentos <br/><br/>
+
+Os objetos aqui apresentados contêm em si uma espécie de divergência que resulta da presença destas
+duas formas de fazer: o linho, e as suas memórias artesanais, é integrado em objetos cuja concessão foi
+dirigida por uma pesquisa formal. Foram desenhados e criados a partir da manipulação digital de
+imagens, numa lógica de relação com as matérias em que estas só surgem tardiamente, no momento
+em que a experimentação das suas qualidades físicas é indispensável para poder responder ao
+desenho inicial. Inserido nesta lógica construtiva, o linho foi desviado das suas rotas ancestrais para
+outras que o conduzirão a viver em materialidades que até aqui lhe foram estranhas. <br/><br/>
+
+Estes objetos pretendem, na formulação dos seus fazedores, ser formalmente gritantes. É esse um
+objetivo querido e assumido por André Duarte e Ricardo Sousa. Dito de outro modo, pretende-se fazer
+uma deslocação da função para o terreno da existência formal; que passa a ser, em si própria, uma
+função. Mas as mesmas formas deverão também conseguir cumprir cabalmente a função de difundir
+óleos essenciais, pelo que se configura aqui uma sobreposição de funções. A de difundir óleos e odores
+– que nos habituámos a ver associada a objetos formalmente discretos – tem de ser harmonizada com
+objetos que não querem ter a humildade (Daniel Miller) de desaparecer, nem do nosso campo de visão,
+nem do nosso campo de deslocação (veja-se a dimensão da peça constituída por uma circunferência
+de linho esticada por dois círculos de latão e suspensa por fios iluminados). Eles fazem questão de
+existir, não apenas quando difundem óleos essenciais, mas sempre: antes de tudo isso, as próprias
+plataformas de difusão são objetos que pretendem existir. Não são mudos. Talvez por isso possamos
+afirmar sem medo que procuram glorificar a formalidade. <br/><br/>
+
+A materialidade – ou se quisermos a existência social da matéria (Ludovic Coupaye e Laurence Douny) –
+é assim convocada a existir no seio das contradições que os fazedores quiseram conferir aos objetos. <br/><br/>
+
+As técnicas, não as do fabrico, mas as do uso, são frequentemente inventadas à posteriori – acontece
+com os objetos novos, como acontece com objetos deslocados do seu contexto social e cultural inicial;
+serão por isso os proprietários das coisas aqui apresentadas que irão construí-las enquanto
+materialidades, ao viver as suas divergências e sobreposições.`;
 
 var readme_handler = {
   "Heavy water": {
@@ -645,6 +690,8 @@ var readme_handler = {
   },
   "Silent gestures": {
     header: silent_gestures_header,
-    description: silent_gestures_description
+    header_2: silent_gestures_header_2,
+    description: silent_gestures_description,
+    description_2: silent_gestures_description_2
   }
 };
