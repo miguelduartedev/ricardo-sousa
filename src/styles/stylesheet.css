@@ -788,6 +788,10 @@ body#info {
     letter-spacing: -0.03em;
 
     color: #000000;
+    margin-bottom: 0;
+  }
+  
+  #readme #readme_div {
     margin-bottom: 70px;
   }
 

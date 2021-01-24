@@ -385,7 +385,6 @@ function navigation(direction) {
       }
     }
     let currentImg = document.querySelector(".-active");
-    //document.querySelector("#info_bg").src = currentImg.src;
   }
 }
 
@@ -432,6 +431,10 @@ function readMeToMain() {
   $("#footer").animate({ opacity: 1 });
   hideLanding(true);
   $("#nav_next, #nav_previous").css('z-index', 'unset');
+  if (document.querySelector('#readme_title_2')) {
+    document.querySelector('#readme_title_2').style.display = 'none';
+    document.querySelector('#readme_description_2').style.display = 'none';
+  }
 }
 
 function mainToInfo() {
@@ -574,9 +577,7 @@ function textHandler() {
   let project = document.querySelector(".-active").dataset.projectname;
   document.getElementById("readme_title").innerHTML = readme_handler[project]["header"];
   document.getElementById("readme_description").innerHTML = readme_handler[project]["description"];
-  console.log('oi manel? 2');
   if ('header_2' in readme_handler[project]) {
-    console.log('oi manel?');
     let second_title = document.getElementById("readme_title_2"),
       second_description = document.getElementById("readme_description_2");
     second_title.innerHTML = readme_handler[project]["header_2"];
