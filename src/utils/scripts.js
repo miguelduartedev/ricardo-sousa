@@ -251,6 +251,7 @@ $(document).ready(function () {
   }
   if (window.innerWidth <= 575.98) {
     if ($('#counter').css('visibility') == 'hidden') {
+      console.log('este');
       $('#description').css('margin-bottom', "-20px");
     }
     document.querySelector('.left').innerHTML = document.querySelector('.left').innerHTML.replace(',', '');
@@ -388,6 +389,7 @@ function navigation(direction) {
     }
     if (window.innerWidth <= 575.98) {
       if ($('#counter').css('visibility') == 'hidden') {
+        console.log("console.log('este');");
         $('#description').css('margin-bottom', "-20px");
       } else {
         $('#description').css('margin-bottom', "10px");
@@ -492,6 +494,13 @@ function mainToOverview() {
 }
 
 function overviewToMain() {
+  if (window.innerWidth <= 575.98) {
+    if ($('#counter').css('visibility') == 'hidden') {
+      $('#description').css('margin-bottom', "-20px");
+    } else {
+      $('#description').css('margin-bottom', "10px");
+    }
+  }
   document.querySelector(".-hidden").classList.remove("-hidden");
   reset_mobile_nav();
   let body = document.querySelector("body");
