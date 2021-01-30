@@ -146,6 +146,9 @@ $(document).ready(function () {
   $("body").fadeIn(1000);
 
   if (queryString.replace("?", "") === "overview") {
+    if (window.innerWidth <= 575.98) {
+      $('html').css('touch-action', "unset");
+    }
     $("#side_author, #top_menu, .-active, #footer").css("opacity", "1");
     $(".firstFade").fadeOut("fast");
     $("#main_section").fadeOut("fast");
@@ -174,6 +177,9 @@ $(document).ready(function () {
     document.querySelectorAll(".photography").forEach(image => {
       if (image.dataset.url === queryString.replace("?", "")) {
         if (window.location.hash === '#readme') {
+          if (window.innerWidth <= 575.98) {
+            $('html').css('touch-action', "unset");
+          }
           document.getElementById('readme').style.marginTop = '0';
           var resdif = (screen.width / screen.height);
           if (resdif >= 1.6) {
@@ -200,6 +206,9 @@ $(document).ready(function () {
           localStorage.setItem('auto-scroll', false);
           hideLanding(true);
         } else {
+          if (window.innerWidth <= 575.98) {
+            $('html').css('touch-action', "none");
+          }
           image.style.opacity = 0.3;
           description.innerHTML = image.dataset.description;
           project_handler(image);
@@ -235,9 +244,6 @@ $(document).ready(function () {
         description.innerHTML = imgInDOM.dataset.description;
         hideLanding();
       }
-    }
-    if (window.innerWidth <= 575.98) {
-      $('html').css('touch-action', "none");
     }
   }
   if (window.innerWidth <= 575.98) {
