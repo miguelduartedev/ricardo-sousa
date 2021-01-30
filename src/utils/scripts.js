@@ -162,6 +162,9 @@ $(document).ready(function () {
     localStorage.setItem('auto-scroll', true);
     pageScroll(1);
   } else if (queryString.replace("?", "") === "info") {
+    if (window.innerWidth <= 575.98) {
+      $('html').css('touch-action', "unset");
+    }
     $("#side_author, #top_menu, .-active, #footer").css("opacity", "1");
     $(".firstFade").fadeOut("fast");
     $("#main_section").fadeOut("fast");
