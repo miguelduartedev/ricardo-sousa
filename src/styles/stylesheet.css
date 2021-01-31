@@ -310,6 +310,8 @@ html,
 body#overview {
   height: 100%;
   overflow: unset;
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
 }
 
 #overview .row {
@@ -846,4 +848,8 @@ body#info {
 
 #readme_title_2, #readme_description_2 {
   display: none;
+}
+
+.-overflow {
+  overflow: hidden;
 }

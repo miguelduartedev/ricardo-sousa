@@ -146,9 +146,9 @@ $(document).ready(function () {
   $("body").fadeIn(1000);
 
   if (queryString.replace("?", "") === "overview") {
-    if (window.innerWidth <= 575.98) {
-      $('html').css('touch-action', "unset");
-    }
+    /* if (window.innerWidth <= 575.98) {
+      $('html').removeClass('-overflow');
+    } */
     $("#side_author, #top_menu, .-active, #footer").css("opacity", "1");
     $(".firstFade").fadeOut("fast");
     $("#main_section").fadeOut("fast");
@@ -162,9 +162,9 @@ $(document).ready(function () {
     localStorage.setItem('auto-scroll', true);
     pageScroll(1);
   } else if (queryString.replace("?", "") === "info") {
-    if (window.innerWidth <= 575.98) {
-      $('html').css('touch-action', "unset");
-    }
+    /* if (window.innerWidth <= 575.98) {
+      $('html').removeClass('-overflow');
+    } */
     $("#side_author, #top_menu, .-active, #footer").css("opacity", "1");
     $(".firstFade").fadeOut("fast");
     $("#main_section").fadeOut("fast");
@@ -180,9 +180,9 @@ $(document).ready(function () {
     document.querySelectorAll(".photography").forEach(image => {
       if (image.dataset.url === queryString.replace("?", "")) {
         if (window.location.hash === '#readme') {
-          if (window.innerWidth <= 575.98) {
-            $('html').css('touch-action', "unset");
-          }
+          /* if (window.innerWidth <= 575.98) {
+            $('html').removeClass('-overflow');
+          } */
           document.getElementById('readme').style.marginTop = '0';
           var resdif = (screen.width / screen.height);
           if (resdif >= 1.6) {
@@ -210,7 +210,7 @@ $(document).ready(function () {
           hideLanding(true);
         } else {
           if (window.innerWidth <= 575.98) {
-            $('html').css('touch-action', "none");
+            $('html').addClass('-overflow');
           }
           image.style.opacity = 0.3;
           description.innerHTML = image.dataset.description;
@@ -251,7 +251,6 @@ $(document).ready(function () {
   }
   if (window.innerWidth <= 575.98) {
     if ($('#counter').css('visibility') == 'hidden') {
-      console.log('este');
       $('#description').css('margin-bottom', "-20px");
     }
     document.querySelector('.left').innerHTML = document.querySelector('.left').innerHTML.replace(',', '');
@@ -424,6 +423,9 @@ function mainToReadMe() {
     $("#main_section").animate({ marginTop: "-310%" }, { duration: 300, queue: false }).fadeOut(800);
   }
   $(".imagesLink").fadeIn({ duration: 300, queue: false });
+  if (window.innerWidth <= 575.98) {
+    $('html').removeClass('-overflow');
+  }
 }
 
 function readMeToMain() {
@@ -446,6 +448,9 @@ function readMeToMain() {
     document.querySelector('#readme_title_2').style.display = 'none';
     document.querySelector('#readme_description_2').style.display = 'none';
   }
+  if (window.innerWidth <= 575.98) {
+    $('html').addClass('-overflow');
+  }
 }
 
 function mainToInfo() {
@@ -454,6 +459,9 @@ function mainToInfo() {
   $(".-active").addClass("-infoBG");
   $("#info").fadeIn("fast");
   refreshParams("info");
+  if (window.innerWidth <= 575.98) {
+    $('html').removeClass('-overflow');
+  }
 }
 
 function infoToMain() {
@@ -466,9 +474,15 @@ function infoToMain() {
   let currentImg = document.querySelector(".-active");
   document.querySelector("#description").innerHTML = currentImg.dataset.description;
   refreshParams(document.querySelector(".-active").dataset.url);
+  if (window.innerWidth <= 575.98) {
+    $('html').addClass('-overflow');
+  }
 }
 
 function mainToOverview() {
+  if (window.innerWidth <= 575.98) {
+    $('html').removeClass('-overflow');
+  }
   document.getElementById('menu').classList.add('loading');
   let activeIMG = document.querySelector(".-active");
   document.querySelector("#first_img").src = activeIMG.src;
@@ -495,6 +509,7 @@ function mainToOverview() {
 
 function overviewToMain() {
   if (window.innerWidth <= 575.98) {
+    $('html').addClass('-overflow');
     if ($('#counter').css('visibility') == 'hidden') {
       $('#description').css('margin-bottom', "-20px");
     } else {
