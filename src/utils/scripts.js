@@ -9,10 +9,10 @@ var lastScrollTop = 0;
 window.addEventListener("scroll", function () {
   var st = window.pageYOffset || document.documentElement.scrollTop;
   if (st > lastScrollTop) {
-    console.log('down');
+    // auto-scroll down
     pageScroll(1);
   } else {
-    console.log('up');
+    // auto-scroll up
     pageScroll(-1);
   }
   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
