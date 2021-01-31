@@ -429,6 +429,7 @@ function mainToReadMe() {
 }
 
 function readMeToMain() {
+  window.scrollTo(0, 0);
   reset_mobile_nav();
   $(".imagesLink").fadeOut("fast");
   var resdif = (screen.width / screen.height);
