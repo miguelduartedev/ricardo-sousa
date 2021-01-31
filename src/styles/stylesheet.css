@@ -808,12 +808,6 @@ body#info {
 
     color: #000000;
   }
-
-  html,
-  body#overview {
-  overflow-y: scroll !important;
-  -webkit-overflow-scrolling: touch;
-}
 }
 
 .nopadding {
@@ -854,6 +848,11 @@ body#info {
   display: none;
 }
 
-.-overflow {
+.-overflowHidden {
   overflow: hidden;
+}
+
+.-overflowY {
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch;
 }

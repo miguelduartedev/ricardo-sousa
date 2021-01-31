@@ -146,9 +146,9 @@ $(document).ready(function () {
   $("body").fadeIn(1000);
 
   if (queryString.replace("?", "") === "overview") {
-    /* if (window.innerWidth <= 575.98) {
-      $('html').removeClass('-overflow');
-    } */
+    if (window.innerWidth <= 575.98) {
+      $('html').addClass('-overflowY');
+    }
     $("#side_author, #top_menu, .-active, #footer").css("opacity", "1");
     $(".firstFade").fadeOut("fast");
     $("#main_section").fadeOut("fast");
@@ -175,7 +175,7 @@ $(document).ready(function () {
     hideLanding(true);
   } else {
     if (window.innerWidth <= 575.98) {
-      $('html').addClass('-overflow');
+      $('html').addClass('-overflowHidden');
     }
     // Location: Gallery
     // Este mete logo o -active, portanto o outro só corre se este não o adicionar
@@ -184,7 +184,7 @@ $(document).ready(function () {
       if (image.dataset.url === queryString.replace("?", "")) {
         if (window.location.hash === '#readme') {
           if (window.innerWidth <= 575.98) {
-            $('html').removeClass('-overflow');
+            $('html').removeClass('-overflowHidden');
           }
           document.getElementById('readme').style.marginTop = '0';
           var resdif = (screen.width / screen.height);
@@ -424,7 +424,7 @@ function mainToReadMe() {
   }
   $(".imagesLink").fadeIn({ duration: 300, queue: false });
   if (window.innerWidth <= 575.98) {
-    $('html').removeClass('-overflow');
+    $('html').removeClass('-overflowHidden');
   }
 }
 
@@ -449,7 +449,7 @@ function readMeToMain() {
     document.querySelector('#readme_description_2').style.display = 'none';
   }
   if (window.innerWidth <= 575.98) {
-    $('html').addClass('-overflow');
+    $('html').addClass('-overflowHidden');
   }
 }
 
@@ -460,7 +460,7 @@ function mainToInfo() {
   $("#info").fadeIn("fast");
   refreshParams("info");
   if (window.innerWidth <= 575.98) {
-    $('html').removeClass('-overflow');
+    $('html').removeClass('-overflowHidden');
   }
 }
 
@@ -475,13 +475,14 @@ function infoToMain() {
   document.querySelector("#description").innerHTML = currentImg.dataset.description;
   refreshParams(document.querySelector(".-active").dataset.url);
   if (window.innerWidth <= 575.98) {
-    $('html').addClass('-overflow');
+    $('html').addClass('-overflowHidden');
   }
 }
 
 function mainToOverview() {
   if (window.innerWidth <= 575.98) {
-    $('html').removeClass('-overflow');
+    $('html').removeClass('-overflowHidden');
+    $('html').addClass('-overflowY');
   }
   document.getElementById('menu').classList.add('loading');
   let activeIMG = document.querySelector(".-active");
@@ -509,7 +510,8 @@ function mainToOverview() {
 
 function overviewToMain() {
   if (window.innerWidth <= 575.98) {
-    $('html').addClass('-overflow');
+    $('html').removeClass('-overflowY');
+    $('html').addClass('-overflowHidden');
     if ($('#counter').css('visibility') == 'hidden') {
       $('#description').css('margin-bottom', "-20px");
     } else {
