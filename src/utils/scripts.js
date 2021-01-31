@@ -174,15 +174,18 @@ $(document).ready(function () {
     randomizeImage();
     hideLanding(true);
   } else {
+    if (window.innerWidth <= 575.98) {
+      $('html').addClass('-overflow');
+    }
     // Location: Gallery
     // Este mete logo o -active, portanto o outro só corre se este não o adicionar
     var description = document.querySelector("#description");
     document.querySelectorAll(".photography").forEach(image => {
       if (image.dataset.url === queryString.replace("?", "")) {
         if (window.location.hash === '#readme') {
-          /* if (window.innerWidth <= 575.98) {
+          if (window.innerWidth <= 575.98) {
             $('html').removeClass('-overflow');
-          } */
+          }
           document.getElementById('readme').style.marginTop = '0';
           var resdif = (screen.width / screen.height);
           if (resdif >= 1.6) {
@@ -209,9 +212,6 @@ $(document).ready(function () {
           localStorage.setItem('auto-scroll', false);
           hideLanding(true);
         } else {
-          if (window.innerWidth <= 575.98) {
-            $('html').addClass('-overflow');
-          }
           image.style.opacity = 0.3;
           description.innerHTML = image.dataset.description;
           project_handler(image);
