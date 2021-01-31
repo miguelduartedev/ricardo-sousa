@@ -26,6 +26,7 @@ function pageScroll(direction) {
   console.log(hashString);
   if ((queryString.replace("?", "") !== "info") && hashString !== '#readme') {
     if (localStorage.getItem('auto-scroll') !== 'false') {
+      console.log('auto-scroll ativado');
       window.scrollBy(0, direction);
       scrolldelay = setTimeout(pageScroll, 20);
     }
