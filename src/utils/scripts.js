@@ -24,7 +24,7 @@ function pageScroll(direction) {
   const queryString = window.location.search;
   const hashString = window.location.hash;
   console.log(hashString);
-  if ((queryString.replace("?", "") !== "info") && hashString !== 'readme') {
+  if ((queryString.replace("?", "") !== "info") && hashString !== '#readme') {
     if (localStorage.getItem('auto-scroll') !== 'false') {
       window.scrollBy(0, direction);
       scrolldelay = setTimeout(pageScroll, 20);
