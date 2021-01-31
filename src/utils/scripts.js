@@ -22,7 +22,9 @@ var scrollActive = false;
 
 function pageScroll(direction) {
   const queryString = window.location.search;
-  if ((queryString.replace("?", "") !== "info")) {
+  const hashString = window.location.hash;
+  console.log(hashString);
+  if ((queryString.replace("?", "") !== "info") && hashString !== 'readme') {
     if (localStorage.getItem('auto-scroll') !== 'false') {
       window.scrollBy(0, direction);
       scrolldelay = setTimeout(pageScroll, 20);
@@ -388,7 +390,6 @@ function navigation(direction) {
     }
     if (window.innerWidth <= 575.98) {
       if ($('#counter').css('visibility') == 'hidden') {
-        console.log("console.log('este');");
         $('#description').css('margin-bottom', "-20px");
       } else {
         $('#description').css('margin-bottom', "10px");
