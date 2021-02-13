@@ -23,10 +23,10 @@ var scrollActive = false;
 function pageScroll(direction) {
   const queryString = window.location.search;
   const hashString = window.location.hash;
-  console.log(hashString);
-  if ((queryString.replace("?", "") !== "info") && hashString !== '#readme') {
+  /* console.log(hashString); */
+  if ((queryString.replace("?", "") !== "info") && hashString !== '#readme' && !isMobile()) {
     if (localStorage.getItem('auto-scroll') !== 'false') {
-      console.log('auto-scroll ativado');
+      /* console.log('auto-scroll ativado'); */
       window.scrollBy(0, direction);
       scrolldelay = setTimeout(pageScroll, 20);
     }
@@ -34,6 +34,14 @@ function pageScroll(direction) {
 }
 
 pageScroll(1);
+
+function isMobile() {
+  if (window.innerWidth <= 575.98) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 //document.addEventListener("scroll", pageScroll(false));
 
@@ -400,15 +408,38 @@ function navigation(direction) {
   }
 }
 
+function mobileDescriptionHandler(read, hide) {
+  if (isMobile) {
+    let description = document.getElementById("description");
+    if (hide) {
+      description.classList.add('-descriptionMargin');
+    } else {
+      if (description.classList.contains('-descriptionMargin')) {
+        description.classList.remove('-descriptionMargin');
+      }
+    }
+  }
+}
+
 function project_handler(nextImgDOM) {
   try {
     let read = document.querySelector("[data-reference=index]");
     let counter = document.getElementById("counter");
     return nextImgDOM.dataset.project === "true"
-      ? ((counter.innerHTML = nextImgDOM.dataset.position),
-        (counter.style.visibility = "visible"),
-        (read.style.visibility = "visible"))
+      ? (nextImgDOM.dataset.hastext === "true"
+        ? (
+          ((counter.innerHTML = nextImgDOM.dataset.position),
+            (counter.style.visibility = "visible"),
+            mobileDescriptionHandler(read, false),
+            (read.style.visibility = "visible"))
+        )
+        :
+        (((counter.innerHTML = nextImgDOM.dataset.position),
+          mobileDescriptionHandler(read, true),
+          (counter.style.visibility = "visible"),
+          (read.style.visibility = "hidden"))))
       : ((counter.style.visibility = "hidden"),
+        mobileDescriptionHandler(read, false),
         (read.style.visibility = "hidden"));
   } catch { }
 }
@@ -509,6 +540,7 @@ function mainToOverview() {
   let anchorIMG = ('img-' + ((parseInt(image.split("-")[1]) - 1)).toString());
   let imgHandler = anchorIMG === 'img-0' ? 'img-1' : anchorIMG;
   refreshParams("overview");
+  document.querySelector(":not(.-hidden)").classList.add('last_overview_image');
 }
 
 function overviewToMain() {

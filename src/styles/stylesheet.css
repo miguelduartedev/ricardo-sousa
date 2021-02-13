@@ -74,7 +74,7 @@ a:hover {
 .photography {
   align-self: center;
   margin: 0 auto;
-  max-height: 70vh;
+  height: 70vh;
   max-width: 90vw;
   transition: max-height 0.25s ease-in;
   display: none;
@@ -206,15 +206,15 @@ img.overview {
 }
 
 .overview.height-280 {
-  height: 280px;
+  max-height: 280px;
 }
 
 .overview.height-350 {
-  height: 350px;
+  max-height: 350px;
 }
 
 .overview.height-400 {
-  height: 400px;
+  max-height: 400px;
 }
 
 /* @media (min-width: 1680px) {
@@ -837,7 +837,7 @@ body#info {
 }
 
 .last_overview_image {
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 }
 
 .loading {
@@ -855,4 +855,12 @@ body#info {
 .-overflowY {
   overflow-y: scroll !important;
   -webkit-overflow-scrolling: touch;
+}
+
+#oi {
+  padding-bottom: 1px;
+}
+
+.-descriptionMargin {
+  margin-bottom: -15px !important;
 }
