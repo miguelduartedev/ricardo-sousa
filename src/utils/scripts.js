@@ -264,7 +264,7 @@ $(document).ready(function () {
     if ($('#counter').css('visibility') == 'hidden') {
       $('#description').css('margin-bottom', "-20px");
     }
-    document.querySelector('.left').innerHTML = document.querySelector('.left').innerHTML.replace(',', '');
+    document.querySelector('.left').innerHTML = document.querySelector('.left').innerHTML.replace(',', '<br>');
   }
   let currentImg = document.querySelector(".-active");
   //document.querySelector("#info_bg").src = currentImg.src;
@@ -657,7 +657,7 @@ function textHandler() {
   }
 }
 
-const heavy_water_header = "Heavy Water <br> Ricardo Sousa";
+const heavy_water_header = "Heavy Water <br> Ricardo Sousa and André Duarte";
 
 const heavy_water_description = `An essay exploring how mechanical complications allow mundane objects perform seemlessly, quitely while being very intuitive. <br><br>
 With an obsessive attention to detail, specially on the inside, performance and durability, this project has resulted into an object that provides and intruiging and almost magical performance. <br><br>

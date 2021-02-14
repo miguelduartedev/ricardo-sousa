@@ -548,9 +548,9 @@ body#info {
     margin-top: 300%;
   }
 
-  .left_anchor:last-of-type{
+/*   .left_anchor:last-of-type{
     display: block;
-  }
+  } */
   
   .left_anchor {
     line-height: 20px;
