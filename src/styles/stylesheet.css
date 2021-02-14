@@ -863,4 +863,7 @@ body#info {
 
 .-descriptionMargin {
   margin-bottom: -15px !important;
+  width: 75% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
