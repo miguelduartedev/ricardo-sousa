@@ -206,15 +206,15 @@ img.overview {
 }
 
 .overview.height-280 {
-  /* max-height: 280px; */
+  max-height: 280px;
 }
 
 .overview.height-350 {
-  /* max-height: 350px; */
+  max-height: 350px;
 }
 
 .overview.height-400 {
-  /* max-height: 400px; */
+  max-height: 400px;
 }
 
 /* @media (min-width: 1680px) {
@@ -276,7 +276,7 @@ img.overview {
   }
   img.overview {
     max-width: 285px !important;
-    /* height: 180px !important; */
+    height: 180px !important;
   }
 }
 
@@ -833,7 +833,7 @@ body#info {
 }
 
 #img-X {
-  /* padding-top: 100px; */
+  padding-top: 100px;
 }
 
 .last_overview_image {
