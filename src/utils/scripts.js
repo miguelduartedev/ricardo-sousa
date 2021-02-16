@@ -423,8 +423,7 @@ function mobileDescriptionHandler(read, hide) {
 
 function project_handler(nextImgDOM) {
   try {
-    let read = document.getElementById('testing');
-    //let read = document.querySelector("[data-reference=index]");
+    let read = document.querySelector("[data-reference=index]");
     let counter = document.getElementById("counter");
     return nextImgDOM.dataset.project === "true"
       ? (nextImgDOM.dataset.hastext === "true"
