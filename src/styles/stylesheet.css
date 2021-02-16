@@ -858,8 +858,8 @@ body#info {
 }
 
 .-descriptionMargin {
-  margin-bottom: -1px !important;
-  width: 75% !important;
+  margin-bottom: -15px !important;
+  width: 65% !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
