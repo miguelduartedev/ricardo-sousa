@@ -531,7 +531,7 @@ function mainToOverview() {
     $("body").css("height", "100%");
     $("body").css("overview", "hidden");
     $("#overview").fadeIn("slow");
-    document.getElementById('img-X').scrollIntoView();
+    //document.getElementById('img-X').scrollIntoView();
     localStorage.setItem('auto-scroll', true);
     pageScroll(1);
   }, 400);
