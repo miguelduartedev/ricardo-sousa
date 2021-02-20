@@ -261,9 +261,7 @@ $(document).ready(function () {
     }
   }
   if (window.innerWidth <= 575.98) {
-    if ($('#counter').css('visibility') == 'hidden') {
-      $('#description').css('margin-bottom', "-20px");
-    }
+    reset_mobile_description();
     document.querySelector('.left').innerHTML = document.querySelector('.left').innerHTML.replace(',', '<br>');
   }
   let currentImg = document.querySelector(".-active");
@@ -397,13 +395,7 @@ function navigation(direction) {
         refreshParams(nextImg.dataset.url);
       }
     }
-    if (window.innerWidth <= 575.98) {
-      if ($('#counter').css('visibility') == 'hidden') {
-        $('#description').css('margin-bottom', "-20px");
-      } else {
-        $('#description').css('margin-bottom', "10px");
-      }
-    }
+    reset_mobile_description();
     let currentImg = document.querySelector(".-active");
   }
 }
@@ -547,11 +539,7 @@ function overviewToMain() {
   if (window.innerWidth <= 575.98) {
     $('html').removeClass('-overflowY');
     $('html').addClass('-overflowHidden');
-    if ($('#counter').css('visibility') == 'hidden') {
-      //$('#description').css('margin-bottom', "-20px");
-    } else {
-      //$('#description').css('margin-bottom', "10px");
-    }
+    reset_mobile_description();
   }
   document.querySelector(".-hidden").classList.remove("-hidden");
   reset_mobile_nav();
@@ -566,6 +554,14 @@ function overviewToMain() {
   //document.querySelector("#info_bg").src = currentImg.src;
   localStorage.setItem('auto-scroll', false);
   document.getElementById('menu').classList.remove('loading');
+}
+
+function reset_mobile_description() {
+  if ($('#counter').css('visibility') == 'hidden') {
+    //$('#description').css('margin-bottom', "-20px");
+  } else {
+    //$('#description').css('margin-bottom', "10px");
+  }
 }
 
 function reset_mobile_nav() {
