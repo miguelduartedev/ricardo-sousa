@@ -558,9 +558,9 @@ function overviewToMain() {
 
 function reset_mobile_description() {
   if ($('#counter').css('visibility') == 'hidden') {
-    //$('#description').css('margin-bottom', "-20px");
+    $('#description').css('margin-bottom', "-20px");
   } else {
-    //$('#description').css('margin-bottom', "10px");
+    $('#description').css('margin-bottom', "10px");
   }
 }
 
