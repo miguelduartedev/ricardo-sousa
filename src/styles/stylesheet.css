@@ -859,7 +859,7 @@ body#info {
 
 .-descriptionMargin {
   /* margin-bottom: -15px !important; */
-  width: 65% !important;
+  /* width: 65% !important; */
   margin-left: auto !important;
   margin-right: auto !important;
 }
