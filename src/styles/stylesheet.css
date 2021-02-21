@@ -865,3 +865,9 @@ body#info {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+@media (min-width: 1920px) {
+  .photography {
+    height: 60vh !important;
+  }
+}
