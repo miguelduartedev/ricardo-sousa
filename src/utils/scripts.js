@@ -395,7 +395,9 @@ function navigation(direction) {
         refreshParams(nextImg.dataset.url);
       }
     }
-    reset_mobile_description();
+    if (window.innerWidth <= 575.98) {
+      reset_mobile_description();
+    }
     let currentImg = document.querySelector(".-active");
   }
 }
