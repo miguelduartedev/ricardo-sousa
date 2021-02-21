@@ -201,9 +201,9 @@ a:hover {
   }
 }
 
-img.overview {
+/* img.overview {
   max-width: 450px;
-}
+} */
 
 .overview.height-280 {
   max-height: 280px;
