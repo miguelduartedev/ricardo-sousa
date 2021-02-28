@@ -2,6 +2,17 @@ console.log(
   "Developed by Luís Conceição: https://www.linkedin.com/in/lu%C3%ADs-c-619364108/"
 );
 
+const userAgent = navigator.userAgent.toLowerCase();
+const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+
+function isMobile() {
+  if (window.innerWidth <= 575.98) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 var lastScrollTop = 0;
 
 // Scroll Direction Detector
@@ -24,7 +35,7 @@ function pageScroll(direction) {
   const queryString = window.location.search;
   const hashString = window.location.hash;
   /* console.log(hashString); */
-  if ((queryString.replace("?", "") !== "info") && hashString !== '#readme' && !isMobile()) {
+  if ((queryString.replace("?", "") !== "info") && hashString !== '#readme' && !isMobile() && !isTablet) {
     if (localStorage.getItem('auto-scroll') !== 'false') {
       /* console.log('auto-scroll ativado'); */
       window.scrollBy(0, direction);
@@ -34,14 +45,6 @@ function pageScroll(direction) {
 }
 
 pageScroll(1);
-
-function isMobile() {
-  if (window.innerWidth <= 575.98) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
 //document.addEventListener("scroll", pageScroll(false));
 
@@ -438,6 +441,29 @@ function project_handler(nextImgDOM) {
   } catch { }
 }
 
+function shuffle(array) {
+  var tmp, current, top = array.length;
+  if (top) while (--top) {
+    current = Math.floor(Math.random() * (top + 1));
+    tmp = array[current];
+    array[current] = array[top];
+    array[top] = tmp;
+  }
+  return array;
+}
+
+function overviewOrder(activeIMG) {
+  for (var a = [], i = 0; i < (document.querySelectorAll('#overviewWrapper .randomize').length); ++i) a[i] = i;
+  let imgNumber = activeIMG.dataset.img;
+  //console.log(imgNumber)
+  let wrapper = $('#overviewWrapper');
+  let items = wrapper.children('.randomize');
+  let order = shuffle(a);
+  wrapper.append($.map(order, function (v) { return items[v] }));
+
+
+}
+
 function mainToReadMe() {
   $(".firstFade").fadeOut("fast");
   $("#readme").fadeIn(25).animate({ marginTop: "0" }, { duration: 300, queue: false });
@@ -514,6 +540,7 @@ function mainToOverview() {
   }
   document.getElementById('menu').classList.add('loading');
   let activeIMG = document.querySelector(".-active");
+  overviewOrder(activeIMG);
   document.querySelector("#first_img").src = activeIMG.src;
   document.querySelector("#first_img").setAttribute("data-img", activeIMG.dataset.img);
   document.getElementById(activeIMG.dataset.img).classList.add("-hidden");

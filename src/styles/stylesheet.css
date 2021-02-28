@@ -271,10 +271,7 @@ a:hover {
 
 @media (max-width: 767.98px) {
   .row_spacing {
-    margin: 130px 0 90px 0;
-  }
-  .rowPadding {
-    padding-top: 50px;
+    margin: 100px 0 100px 0;
   }
   img.overview {
     max-width: 285px !important;
@@ -855,7 +852,7 @@ body#info {
   -webkit-overflow-scrolling: touch;
 }
 
-#oi {
+#overviewWrapper {
   padding-bottom: 1px;
 }
 
@@ -869,5 +866,23 @@ body#info {
 @media (min-width: 1920px) {
   .photography {
     height: 60vh !important;
+  }
+}
+
+#readme {
+  background-color: white;
+  height: 100vh;
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .height-280 {
+    max-height: 170px !important; 
+  }
+  .height-350 {
+    max-height: 210px !important;
+  }
+  .height-400 {
+    max-height: 250px !important;
   }
 }
