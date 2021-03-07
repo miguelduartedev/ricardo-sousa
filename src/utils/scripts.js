@@ -4,6 +4,7 @@ console.log(
 
 const userAgent = navigator.userAgent.toLowerCase();
 const isTablet = /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(userAgent);
+const iPadVariations = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
 function isMobile() {
   if (window.innerWidth <= 575.98) {
@@ -35,7 +36,7 @@ function pageScroll(direction) {
   const queryString = window.location.search;
   const hashString = window.location.hash;
   /* console.log(hashString); */
-  if ((queryString.replace("?", "") !== "info") && hashString !== '#readme' && !isMobile() && !isTablet) {
+  if ((queryString.replace("?", "") !== "info") && hashString !== '#readme' && !isMobile() && !isTablet && !iPadVariations) {
     if (localStorage.getItem('auto-scroll') !== 'false') {
       /* console.log('auto-scroll ativado'); */
       window.scrollBy(0, direction);
