@@ -894,7 +894,7 @@ body#info {
   .photography, #info_bg {
     max-width: 80vw;
     height: unset;
-    max-height: 380px;
+    max-height: 350px;
   }
 }
 
