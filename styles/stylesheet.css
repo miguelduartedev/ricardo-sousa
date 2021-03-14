@@ -888,17 +888,15 @@ body#info {
 }
 
 /* iPhone 6/6+ (smaller smartphones) ----------- */
-@media only screen 
-    and (min-device-width : 375px) 
-    and (max-device-width : 667px) 
-    and (orientation : portrait) 
-    and (-webkit-min-device-pixel-ratio : 2) {
+@media (device-height : 667px) 
+   and (device-width : 375px) 
+   and (-webkit-min-device-pixel-ratio: 2) {
   .photography, #info_bg {
-   max-width: 80vw;
+    max-width: 80vw;
     height: unset;
     max-height: 380px;
   }
- }
+}
 
 /* iPhone 5+ (smaller smartphones) ----------- */
 @media (device-height : 568px) 
