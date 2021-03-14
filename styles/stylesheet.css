@@ -895,3 +895,14 @@ body#info {
     max-height: 380px;
   }
 }
+
+/* iPhone 5+ (smaller smartphones) ----------- */
+@media (device-height : 568px) 
+   and (device-width : 320px) 
+   and (-webkit-min-device-pixel-ratio: 2) {
+  .photography, #info_bg {
+    max-width: 80vw;
+    height: unset;
+    max-height: 275px;
+  }
+}
