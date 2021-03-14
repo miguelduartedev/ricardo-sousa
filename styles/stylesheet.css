@@ -886,3 +886,12 @@ body#info {
     max-height: 250px !important;
   }
 }
+
+/* iPhone 6/6+ (smaller smartphones) ----------- */
+@media only screen and (max-device-width: 640px) and (max-device-width: 667px) and (max-width: 480px) and (orientation : portrait) { 
+  .photography, #info_bg {
+   max-width: 80vw;
+    height: unset;
+    max-height: 380px;
+  }
+}
