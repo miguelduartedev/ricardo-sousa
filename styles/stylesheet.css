@@ -1,0 +1,888 @@
+body {
+  font-family: Neue Haas Grotesk Text Pro;
+}
+
+a {
+  color: unset;
+}
+
+a:hover {
+  color: unset;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#top_menu {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #000000;
+}
+
+#author {
+  width: 100%;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 120px;
+  line-height: 147px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #000000;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 49px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: -0.03em;
+
+  color: #000000;
+}
+
+#side_author {
+  opacity: 0;
+}
+
+.landing {
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  /* min-height: 100vh; */
+  /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.read_section {
+  display: none;
+}
+
+.photography {
+  align-self: center;
+  margin: 0 auto;
+  max-height: 70vh;
+  max-width: 90vw;
+  width: auto;
+  height: auto;
+  transition: max-height 0.25s ease-in;
+  display: none;
+}
+
+.-active {
+  display: unset;
+  transition: opacity 200ms;
+}
+
+#nav_next.-operating {
+  cursor: e-resize;
+}
+
+#nav_previous.-operating {
+  cursor: w-resize;
+}
+
+#description,
+#info_description {
+  margin-bottom: 20px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  z-index: -1;
+
+  text-align: center;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height, or 123% */
+
+  text-align: center;
+  letter-spacing: -0.03em;
+
+  color: #000000;
+}
+
+.read {
+  visibility:hidden;
+  float:left;
+}
+
+.read, .imagesLink {
+  margin-bottom: 20px;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 123% */
+
+  letter-spacing: -0.03em;
+  text-decoration-line: underline;
+  color: #000000;
+}
+
+.read:hover {
+  cursor: pointer;
+}
+
+#side_author {
+  z-index: 40;
+  position: fixed;
+  top: 15px;
+}
+
+#menu,
+#back {
+  margin-top: 15px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#counter {
+  margin-bottom: 20px;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 123% */
+
+  text-align: right;
+  letter-spacing: -0.03em;
+
+  color: #000000;
+}
+
+#mobile_nav {
+  display: none;
+}
+
+/* #info_bg {
+  z-index: -1;
+  position: -webkit-sticky;
+  position: fixed;
+  top: 20%;
+  display: block;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.3;
+  align-self: center;
+  margin: 0 auto;
+  max-height: 70vh;
+  max-width: 90vw;
+} */
+
+@media (max-width: 1366px) {
+  #image {
+    max-height: 70%;
+  }
+}
+
+@media (max-width: 900px) {
+  .photography {
+    max-height: 50vh;
+    max-width: 80vw;
+  }
+}
+
+/* img.overview {
+  max-width: 450px;
+} */
+
+.overview.height-280 {
+  max-height: 280px;
+}
+
+.overview.height-350 {
+  max-height: 350px;
+}
+
+.overview.height-400 {
+  max-height: 400px;
+}
+
+/* @media (min-width: 1680px) {
+.overview.height-280 {
+  height: 380px;
+  max-width: 500px;
+}
+
+.overview.height-350 {
+  height: 450px;
+  max-width: 500px;
+}
+
+.overview.height-400 {
+  height: 500px;
+  max-width: 500px;
+}
+} */
+
+/* METE 170PX SE QUISEREM O SCROLL AUTOMATICO */
+.row_spacing {
+  margin: 150px 0 150px 0;
+  max-width: 100%;
+}
+
+/* TIRA ISTO SE QUISEREM O SCROLL */
+/* .rowPadding {
+  padding-top: 30px;
+} */
+
+/* @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .photography {
+      height: 40vh;
+    }
+} */
+
+@media (max-width: 1000px) {
+  #info .left {
+    margin-bottom: 5px !important;
+    float: unset !important;
+    position: unset !important;
+  }
+  #info .center {
+    text-align: unset !important;
+    margin: unset !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .row_spacing {
+    margin: 100px 0 100px 0;
+  }
+  img.overview {
+    max-width: 285px !important;
+    height: 180px !important;
+  }
+}
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+html {
+  overflow: unset;
+  overflow-x: unset;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+html,
+body#overview {
+  height: 100%;
+  overflow: unset;
+}
+
+#overview .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#overview {
+  height: 100%;
+  overflow: unset;
+}
+
+/* TIRA ISTO SE QUISEREM O SCROLL AUTOMATICO */
+.Loop {
+  position: relative;
+  height: 100%;
+  /*overflow-y: auto;
+   overflow-x: hidden; 
+  -webkit-overflow-scrolling: touch;*/
+}
+
+section {
+  position: relative;
+  text-align: center;
+}
+
+::scrollbar {
+  display: none;
+}
+
+.info {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 43px;
+  /* or 107% */
+
+  letter-spacing: -0.03em;
+
+  color: #000000;
+}
+
+html,
+body#info {
+  overflow: unset;
+}
+
+#info #main_section {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#info #top_menu {
+  max-width: 100%;
+  position: inline-block;
+  z-index: 500;
+}
+
+#info #back {
+  margin-top: 15px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#info .ricardo_info {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 43px;
+  /* or 107% */
+  letter-spacing: -0.03em;
+  color: #000000;
+  margin: 25px 15px 0px 15px;
+}
+
+#info .ricardo_info .info_intro {
+  margin-bottom: 3rem;
+}
+
+.tg {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 77px;
+}
+
+.tg td {
+  font-size: 14px;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+
+.tg th {
+  font-size: 14px;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 10px 5px;
+  word-break: normal;
+}
+
+.tg .tg-0lax {
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.tg .tg-0lax .info_date {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  /* or 123% */
+  margin: 0 auto;
+  letter-spacing: -0.03em;
+  float: left;
+  color: #000000;
+  margin-right: 37px;
+}
+
+.tg .tg-0lax .info_resume_top {
+  margin-left: 40px;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 43px;
+  letter-spacing: -0.03em;
+  margin: 0 auto;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+.tg .tg-0lax .info_resume_bottom {
+  margin-left: 40px;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 43px;
+  letter-spacing: -0.03em;
+  margin: 0 auto;
+  color: #000000;
+}
+
+#info .left {
+  float: left;
+  position: absolute;
+  text-decoration-line: none;
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.03em;
+  color: #000000;
+}
+
+.left_anchor:hover {
+  text-decoration: underline;
+}
+
+#info .center {
+  margin: 0 auto;
+  position: relative;
+}
+
+#info_footer {
+  margin-bottom: 20px;
+}
+
+#readme .readme_description {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  /* or 123% */
+
+  letter-spacing: -0.03em;
+
+  color: #000000;
+}
+
+#readme .readme_title {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  /* or 123% */
+
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+#readme #readlink {
+  font-family: Neue Haas Grotesk Text Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 123% */
+
+  letter-spacing: -0.03em;
+  text-decoration-line: underline;
+
+  color: #000000;
+}
+
+#readme #footer {
+  max-width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
+#readme #readlink {
+  float: left;
+}
+
+#readme {
+  display: none;
+  margin-top: 100%;
+}
+
+@media (max-width: 575.98px) {
+  #readme {
+    margin-top: 300%;
+  }
+
+/*   .left_anchor:last-of-type{
+    display: block;
+  } */
+  
+  .left_anchor {
+    line-height: 20px;
+  }
+
+  #info #top_menu {
+    font-size: 16px;
+    position: -webkit-sticky;
+    position: sticky;
+      top: 0;
+      background: white;
+  }
+
+  .info_intro {
+    line-height: 28px;
+  }
+
+  .info_date {
+    font-size: 16px !important;
+    line-height: 28px !important;
+  }
+
+  .tg td {
+    padding-top: 0 !important;
+  }
+
+  .th-first {
+    padding-top: 0 !important;
+  }
+
+  #menu {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: -0.03em;
+  }
+
+  #description,
+  #info_description {
+    font-size: 16px;
+    padding-top: 15px;
+  }
+
+  .photography, #info_bg {
+    max-width: 87vw;
+    height: unset;
+    max-height: 420px;
+  }
+
+  #side_author {
+    text-align: center;
+    width: 100%;
+    right: 0;
+    top: 25px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  #counter, .read {
+    font-size: 16px;
+    line-height: 17px;
+  }
+
+  #counter {
+    position: fixed;
+    right: 35px;
+  }
+
+  .read {
+    margin-bottom: 30px;
+    text-align: center;
+    float: unset;
+  }
+
+  #description {
+    margin-bottom: 10px;
+    position: unset;
+  }
+
+  .mobileInfoDate {
+    display: block;
+    margin: 0;
+    padding-bottom: 0 !important;
+  }
+
+  .mobileInfoText {
+    display: block;
+    /* width: 165% !important; */
+    float: left;
+  }
+
+  .middleDate {
+    padding-top: 10px !important;
+  }
+
+  .table_title {
+    margin-bottom: 0;
+    line-height: 25px;
+  }
+
+  .tg {
+    margin-bottom: 33px !important;
+  }
+
+  #menu {
+    display: none;
+    margin-top: 25px;
+  }
+
+  #back {
+    margin-top: 25px;
+    font-size: 16px;
+  }
+
+  #mobile_nav {
+    position: relative;
+    z-index: 9999;
+    width: 25px;
+    display: block;
+    float: right;
+    margin-right: 10px;
+    margin-top: 23px;
+    transition-duration: 0.2s;
+  }
+
+  #author {
+    font-family: Neue Haas Grotesk Text Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 43px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    color: #000000;
+  }
+
+  .tg .tg-0lax .info_date {
+    margin-right: 10px;
+  }
+
+  #info .ricardo_info {
+    font-size: 25px;
+    margin: 0px 25px 0px 25px;
+  }
+
+  #info .ricardo_info ~ .ricardo_info {
+    margin: 25px 25px 0px 25px;
+  }
+
+  #info #back {
+    margin-bottom: 15px;
+  }
+
+  .tg .tg-0lax .info_resume_top {
+    font-family: Neue Haas Grotesk Text Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 28px;
+    letter-spacing: -0.03em;
+    color: #000000;
+  }
+
+  .tg .tg-0lax .info_resume_bottom {
+    font-family: Neue Haas Grotesk Text Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 28px;
+    letter-spacing: -0.03em;
+    color: #000000;
+  }
+
+  #info .center {
+    text-align: unset;
+    margin: unset;
+  }
+
+  #info .left {
+    margin-bottom: 5px;
+    font-size: 16px;
+    float: unset;
+    position: unset;
+  }
+
+  .info_intro {
+    margin-bottom: 2rem !important;
+  }
+
+  #footer .imagesLink {
+    font-size: 16px;
+    line-height: 70px;
+    margin-bottom: 0;
+  }
+
+  #readme #footer {
+    max-width: unset;
+    position: unset;
+    bottom: unset;
+    left: unset;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    background: white;
+    height: 70px;
+  }
+
+  #readme #readlink {
+    float: unset;
+    font-family: Neue Haas Grotesk Text Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 17px;
+    /* identical to box height, or 106% */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-decoration-line: underline;
+
+    color: #000000;
+  }
+
+  #readme .readme_description {
+    font-family: Neue Haas Grotesk Text Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+
+    letter-spacing: -0.03em;
+
+    color: #000000;
+    margin-bottom: 0;
+  }
+  
+  #readme #readme_div {
+    margin-bottom: 70px;
+  }
+
+  #readme .readme_title {
+    font-family: Neue Haas Grotesk Text Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* or 119% */
+
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+
+    color: #000000;
+  }
+}
+
+.nopadding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.-hidden {
+  display: none;
+}
+
+.-infoBG {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3 !important;
+  transition: opacity 200ms;
+}
+
+#info {
+  overflow: hidden;
+}
+
+.last_overview_image {
+  padding-bottom: 150px;
+}
+
+.loading {
+  pointer-events: none; 
+}
+
+#readme_title_2, #readme_description_2 {
+  display: none;
+}
+
+.-overflowHidden {
+  overflow: hidden;
+}
+
+.-overflowY {
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+#overviewWrapper {
+  padding-bottom: 1px;
+}
+
+.-descriptionMargin {
+  margin-bottom: -15px !important;
+  width: 65% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 1920px) {
+  .photography {
+    height: 60vh !important;
+  }
+}
+
+#readme {
+  background-color: white;
+  height: 100vh;
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .height-280 {
+    max-height: 170px !important; 
+  }
+  .height-350 {
+    max-height: 210px !important;
+  }
+  .height-400 {
+    max-height: 250px !important;
+  }
+}
