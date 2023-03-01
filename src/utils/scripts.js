@@ -1,5 +1,5 @@
 console.log(
-  "Developed by Luís Conceição: https://www.linkedin.com/in/lu%C3%ADs-c-619364108/"
+  "Developed by Miguel Duarte: https://miguelduartedev.github.io/portfolio/"
 );
 
 const userAgent = navigator.userAgent.toLowerCase();
